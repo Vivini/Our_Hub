@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_151954) do
+ActiveRecord::Schema.define(version: 2020_06_02_132941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "donation_categories", force: :cascade do |t|
+    t.bigint "donation_id"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_donation_categories_on_category_id"
+    t.index ["donation_id"], name: "index_donation_categories_on_donation_id"
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "timeframe"
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "donation_id", null: false
+    t.bigint "visit_id", null: false
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["donation_id"], name: "index_reservations_on_donation_id"
+    t.index ["visit_id"], name: "index_reservations_on_visit_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,4 +72,13 @@ ActiveRecord::Schema.define(version: 2020_06_01_151954) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "donation_categories", "categories"
+  add_foreign_key "donations", "users"
+  add_foreign_key "reservations", "donations"
+  add_foreign_key "reservations", "visits"
 end
