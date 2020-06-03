@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
     @donations = Donation.all
   end
@@ -7,9 +7,17 @@ class DonationsController < ApplicationController
   def show
   end
 
+  def new
+    @donation = Donation.new
+  end
+
+  def create
+
+  end
+
   private
 
   def set_donation
-    @restaurant = Restaurant.find(params[:id])
+    @donation = Donation.find(params[:id])
   end
 end
