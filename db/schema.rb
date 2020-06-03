@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2020_06_03_153926) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "timeframe"
-
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
