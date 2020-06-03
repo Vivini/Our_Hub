@@ -32,4 +32,8 @@ class DonationsController < ApplicationController
     @donation = Donation.find(params[:id])
     authorize @donation
   end
+
+  def donation_params
+    params.require(:donation).permit(photos: [])
+  end
 end
