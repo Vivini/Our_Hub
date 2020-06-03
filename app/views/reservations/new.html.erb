@@ -1,0 +1,8 @@
+<div class="container">
+	<h4>Reserve the donation</h4>
+  <%= simple_form_for [ @donation, @reservation ] do |f| %>
+    <div class= "form-group">
+      <%= f.submit "Send request", class: "button-filled" %>
+    </div>
+  <% end %>
+</div>
