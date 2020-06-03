@@ -1,5 +1,4 @@
 class DonationsController < ApplicationController
-<<<<<<< HEAD
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
     @donations = Donation.all
