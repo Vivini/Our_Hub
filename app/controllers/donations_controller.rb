@@ -8,8 +8,5 @@ class DonationsController < ApplicationController
         lng: donation.longitude
       }
     end
-
-  def donation_params
-    params.require(:donation).permit(photos: [])
   end
 end
