@@ -12,7 +12,8 @@ class DonationsController < ApplicationController
   end
 
   def create
-    
+    @donation = Donation.new(donation_params)
+    @donation.save
   end
 
   private
@@ -22,7 +23,7 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(photos: [])
+    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
   end
 end
 
