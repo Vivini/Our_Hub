@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="banner">
+    <%= image_tag "home_banner_main.jpg", alt: "Image landing page" %>
+  </div>
+  <div class="home-searchform">
+    <%= simple_form_for :search, url: donations_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
+      <%= f.input :category, collection: Category.all %>
+      <%= f.submit 'Search', class: 'btn btn-primary' %>
+    <% end %>
+
+<!--     <form id="search-form">
+         <input type="text" id="address" class="form-control" placeholder="Type in your city">
+        <input type="date" placeholder="From" class="form-control" name="start_date" data-id="rangePlugin" id="start_date">
+        <input type="date" placeholder="Until" class="form-control datepicker" name="end_date" id="secondRangeInput">
+        <a class="button-filled" href="bikes/" role="button">SEARCH</a>
+      </form> -->
+
+  </div>
+  <div class="card-home">
+    <h2>You want to rent<br>a cargo bike?</h2>
+      <p>When you have to move heavy objects but still want to stay green!
+        Search in your neighbourhood for a suitable cargo bike.<br><br>
+        Over short distances, cargo bikes are unbeatable for the environment
+        and the air in your neighbourhood. Book a cargo bike now and get things moved!
+      </p>
+    </div>
+    <div id="homepage-btn">
+      <%= link_to "ADD YOUR DONATION", new_donation_path, class: "button-filled" %>
+    </div>
+</div>
