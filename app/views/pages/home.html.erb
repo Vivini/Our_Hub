@@ -4,19 +4,13 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequatur voluptatibus in accusantium debitis, natus, corrupti molestiae officia quos animi, quod consectetur, corporis ipsam officiis sit magnam veritatis dolor impedit!
     </p>
   </div>
-  <div class="home-searchform">
-    <%= form_tag donations_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "District"
-    %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Radius"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+  
+    <div class="home-searchform">
+      <form action="/donations" method="GET">
+        <input type="address" id="address_input" class="form-control" placeholder="District">
+        <input type="text" id="radius_input" class="form-control" placeholder="Radius">
+        <input type="submit" value="Search" class="btn btn-default">
+      </form>
+    </div>
   </div>
 </div>
