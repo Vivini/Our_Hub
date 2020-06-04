@@ -9,5 +9,8 @@ class DonationsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { donation: donation }) 
       }
     end
+    
+  def donation_params
+    params.require(:donation).permit(photos: [])
   end
 end
