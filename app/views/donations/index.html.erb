@@ -1,7 +1,19 @@
+<%= link_to "Create an account", new_user_registration_path %>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <h1>These are the resources!</h1>
 <ul>
 <% @donations.each do |donation|%>
+
 <li><%= link_to donation.name, donation_path(donation)%></li>
 <%end%>
 </ul>
-<%= link_to "Create an account", new_user_registration_path %>
+
+<li><%= donation.name%></li>
+<li><%= donation.address%></li>
+<%end%>
+</ul>
+

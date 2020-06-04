@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="card-home">
+    <h3>Welcome to Our Hub.</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequatur voluptatibus in accusantium debitis, natus, corrupti molestiae officia quos animi, quod consectetur, corporis ipsam officiis sit magnam veritatis dolor impedit!
+    </p>
+  </div>
+  <div class="home-searchform">
+    <%= form_tag donations_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "District"
+    %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Radius"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
