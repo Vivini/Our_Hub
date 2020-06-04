@@ -59,9 +59,9 @@ donation1 = Donation.create!({
   timeframe: "3pm",
 })
 
-# file1 = URI.open('https://images.unsplash.com/photo-1518388389348-b60e09ab7627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
-# donation1.photos.attach(io: file1, filename: 'sleepingbag.jpg', content_type: 'image/jpg')
-# donation1.save!
+file1 = URI.open('https://images.unsplash.com/photo-1518388389348-b60e09ab7627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
+donation1.photos.attach(io: file1, filename: 'sleepingbag.jpg', content_type: 'image/jpg')
+donation1.save!
 
 user2 = User.create({
   user_name:"ann",
@@ -78,9 +78,9 @@ donation2 = Donation.create!({
   timeframe: "10am",
 })
 
-# file2 = URI.open('https://images.unsplash.com/photo-1580828476460-d1c11a6704bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-# donation1.photos.attach(io: file2, filename: 'tampons.jpg', content_type: 'image/jpg')
-# donation1.save!
+file2 = URI.open('https://images.unsplash.com/photo-1580828476460-d1c11a6704bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
+donation1.photos.attach(io: file2, filename: 'tampons.jpg', content_type: 'image/jpg')
+donation1.save!
 
 user3 = User.create({
   user_name: "alex",
