@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.find(params[:donation_id])
+    @donation = Donation.find(params[:donation_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.donation = @donation
     @reservation.user = current_user
@@ -19,13 +19,13 @@ class ReservationsController < ApplicationController
   end
   
   def show
-  	@donation = Donation.find(params.[:donation_id])
+  	@donation = Donation.find(params[:donation_id])
   	@reservation = Reservation.find(params[:id])
   	@reservation = @donation.reservation
   end
 
   def update
-  	@donation = Donation.find(params.[:donation_id])
+  	@donation = Donation.find(params[:donation_id])
   	@reservation = Reservation.find(params[:id])
   	@reservation.status = "Pending"
     @reservation.save!

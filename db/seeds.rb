@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
+OpenURI::Buffer.send :remove_const, 'StringMax' if OpenURI::Buffer.const_defined?('StringMax')
+OpenURI::Buffer.const_set 'StringMax', 0
 
 DonationCategory.destroy_all
 Category.destroy_all
@@ -214,8 +216,8 @@ donation9 = Donation.create!({
   timeframe: "Intake is between 6 p.m. and 9.30 p.m"
 })
 
-file9 = URI.open('https://news.my-hammer.de/wp-content/uploads/2017/12/Haus_3.jpg')
-donation9.photos.attach(io: file9, filename: 'notübernachtung.jpg', content_type: 'image/jpg')
+file9 = URI.open('https://res.cloudinary.com/vivini/image/upload/v1591287451/Haus_3_r6nxb6.jpg')
+donation9.photos.attach(io: file9, filename: 'notuebernachtung.jpg', content_type: 'image/jpg')
 donation9.save!
 
 organisation5 = User.create!({
