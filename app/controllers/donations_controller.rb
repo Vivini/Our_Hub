@@ -6,10 +6,9 @@ class DonationsController < ApplicationController
       {
         lat: donation.latitude,
         lng: donation.longitude
-        infoWindow: render_to_string(partial: "info_window", locals: { donation: donation }) 
       }
     end
-    
+
   def donation_params
     params.require(:donation).permit(photos: [])
   end
