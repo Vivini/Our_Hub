@@ -2,13 +2,7 @@ class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
     @donations = Donation.all
-  end
-
-  def show
-  end
-
-  def new
-    @donation = Donation.new
+    @donations = policy_scope(Donation)
   end
 
   def create
@@ -16,14 +10,27 @@ class DonationsController < ApplicationController
     if @donation.save
       redirect_to donation_path(@donation)
     else
-      render new
-    end
+      render :new
+   end
+  end
+
+  def show
+    authorize @donation
+  end
+
+  def new
+    @donation = current_user.donations.new
+    authorize @donation
+  end
+
+  def edit
   end
 
   private
 
   def set_donation
     @donation = Donation.find(params[:id])
+    authorize @donation
   end
 
   def donation_params

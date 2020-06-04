@@ -1,0 +1,21 @@
+<li>
+  <%= @donations.each do |donation| %>
+    <%= if policy(donation).show? %>
+      <%= link_to 'Show', donation %>
+    <%= end %>
+  <%= end %>
+</li>
+<li>
+  <%= @donations.each do |donation| %>
+    <%= if policy(donation).update? %>
+      <%= link_to 'Edit', edit_donation_path(donation) %>
+    <%= end %>
+  <%= end %>
+</li>
+<li>
+  <%= @donations.each do |donation| %>
+    <%= if policy(donation).destroy? %>
+      <%= link_to 'Destroy', donation, method: :delete data: { confirm: Are you sure to delete your donation? } %>
+    <%= end %>
+  <%= end %>
+</li>
