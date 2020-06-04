@@ -4,7 +4,7 @@
   </div>
   <div class="home-searchform">
     <%= simple_form_for :search, url: donations_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-      <%= f.input :category, collection: Category.all %>
+      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
       <%= f.submit 'Search', class: 'btn btn-primary' %>
     <% end %>
 
@@ -17,14 +17,15 @@
 
   </div>
   <div class="card-home">
-    <h2>You want to rent<br>a cargo bike?</h2>
-      <p>When you have to move heavy objects but still want to stay green!
-        Search in your neighbourhood for a suitable cargo bike.<br><br>
-        Over short distances, cargo bikes are unbeatable for the environment
-        and the air in your neighbourhood. Book a cargo bike now and get things moved!
+    <h2>Help homeless in you <br>neightbarhood?</h2>
+      <p>Lorem ipsum dolor sit amet, consetetur<br>
+        sadipscing elitr, sed diam nonumy eirmod<br>
+        tempor invidunt ut labore et dolore magna<br>
+        aliquyam erat, sed diam voluptua.
+
       </p>
     </div>
     <div id="homepage-btn">
-      <%= link_to "ADD YOUR DONATION", new_donation_path, class: "button-filled" %>
+      <%= link_to "ADD YOUR DONATION", new_donation_path, class: "button-filled-home" %>
     </div>
 </div>
