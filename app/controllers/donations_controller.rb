@@ -1,7 +1,15 @@
 class DonationsController < ApplicationController
+
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
     @donations = policy_scope(Donation)
+    @donations = Donation.geocoded # returns donations with coordinates
+    @markers = @donations.map do |donation|
+      {
+        lat: donation.latitude,
+        lng: donation.longitude
+      }
+    end
   end
 
   def show
