@@ -2,6 +2,7 @@ class DonationsController < ApplicationController
 
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
+    @donations = Donation.all
     @donations = policy_scope(Donation)
     @donations = Donation.geocoded # returns donations with coordinates
     @markers = @donations.map do |donation|
@@ -10,6 +11,15 @@ class DonationsController < ApplicationController
         lng: donation.longitude
       }
     end
+  end
+
+  def create
+    @donation = Donation.new(donation_params)
+    if @donation.save
+      redirect_to donation_path(@donation)
+    else
+      render :new
+   end
   end
 
   def show
@@ -24,16 +34,6 @@ class DonationsController < ApplicationController
   def edit
   end
 
-  def create
-    @donation = current_user.donations.new(donation_params)
-    authorize @donation
-    if @donation.save
-      redirect_to @donation
-    else
-      render :edit
-    end
-  end
-
   private
 
   def set_donation
@@ -42,6 +42,7 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(photos: [])
+    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
   end
 end
+
