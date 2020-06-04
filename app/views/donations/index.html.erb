@@ -1,6 +1,7 @@
 <h1>These are the resources!</h1>
 <ul>
 <% @donations.each do |donation|%>
-<li><%= donation.name%></li>
+<li><%= link_to donation.name, donation_path(donation)%></li>
 <%end%>
 </ul>
+<%= link_to "Create an account", new_user_registration_path %>

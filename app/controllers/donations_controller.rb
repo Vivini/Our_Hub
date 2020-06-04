@@ -13,7 +13,11 @@ class DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(donation_params)
-    @donation.save
+    if @donation.save
+      redirect_to donation_path(@donation)
+    else
+      render new
+    end
   end
 
   private
