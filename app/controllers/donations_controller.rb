@@ -14,13 +14,13 @@ class DonationsController < ApplicationController
   end
 
   def create
-    authorize @donation
     @donation = Donation.new(donation_params)
     if @donation.save
       redirect_to donation_path(@donation)
     else
       render :new
    end
+   authorize @donation
   end
 
   def show
