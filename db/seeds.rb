@@ -59,9 +59,9 @@ donation1 = Donation.create!({
   timeframe: "3pm",
 })
 
-file1 = URI.open('https://images.unsplash.com/photo-1518388389348-b60e09ab7627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
-donation1.photos.attach(io: file1, filename: 'sleepingbag.jpg', content_type: 'image/jpg')
-donation1.save!
+# file1 = URI.open('https://images.unsplash.com/photo-1518388389348-b60e09ab7627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
+# donation1.photos.attach(io: file1, filename: 'sleepingbag.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 user2 = User.create({
   user_name:"ann",
@@ -78,9 +78,9 @@ donation2 = Donation.create!({
   timeframe: "10am",
 })
 
-file2 = URI.open('https://images.unsplash.com/photo-1580828476460-d1c11a6704bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-donation1.photos.attach(io: file2, filename: 'tampons.jpg', content_type: 'image/jpg')
-donation1.save!
+# file2 = URI.open('https://images.unsplash.com/photo-1580828476460-d1c11a6704bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
+# donation1.photos.attach(io: file2, filename: 'tampons.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 user3 = User.create({
   user_name: "alex",
@@ -97,9 +97,9 @@ donation3 = Donation.create!({
   timeframe: "4pm",
 })
 
-file3 = URI.open('https://images.unsplash.com/photo-1557771884-709f5996687d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
-donation1.photos.attach(io: file3, filename: 'jacket.jpg', content_type: 'image/jpg')
-donation1.save!
+# file3 = URI.open('https://images.unsplash.com/photo-1557771884-709f5996687d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+# donation1.photos.attach(io: file3, filename: 'jacket.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 user4 = User.create({
   user_name: "james",
@@ -116,9 +116,9 @@ donation4 = Donation.create!({
   timeframe: "11am",
 })
 
-file4 = URI.open('https://images.unsplash.com/photo-1511105612320-2e62a04dd044?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80')
-donation1.photos.attach(io: file4, filename: 'trainers.jpg', content_type: 'image/jpg')
-donation1.save!
+# file4 = URI.open('https://images.unsplash.com/photo-1511105612320-2e62a04dd044?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80')
+# donation1.photos.attach(io: file4, filename: 'trainers.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 user5 = User.create({
   user_name: "laura",
@@ -135,9 +135,9 @@ donation5 = Donation.create!({
   timeframe: "3pm",
 })
 
-file5 = URI.open('https://images.unsplash.com/photo-1585828292920-638a2a78cb38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1069&q=80')
-donation1.photos.attach(io: file5, filename: 'firstaidkit.jpg', content_type: 'image/jpg')
-donation1.save!
+# file5 = URI.open('https://images.unsplash.com/photo-1585828292920-638a2a78cb38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1069&q=80')
+# donation1.photos.attach(io: file5, filename: 'firstaidkit.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 organisation1 = User.create({
   user_name: "City-Station",
@@ -155,9 +155,9 @@ donation6 = Donation.create!({
   timeframe: "Tuesday - Saturday 4pm - 8.30pm",
 })
 
-file6 = URI.open('https://www.berliner-stadtmission.de/uploads/tx_templavoila/Standort_III.jpg')
-donation1.photos.attach(io: file6, filename: 'restaurant.jpg', content_type: 'image/jpg')
-donation1.save!
+# file6 = URI.open('https://www.berliner-stadtmission.de/uploads/tx_templavoila/Standort_III.jpg')
+# donation1.photos.attach(io: file6, filename: 'restaurant.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 organisation2 = User.create({
   user_name: "Mobile Einzelfallhilfe",
@@ -174,9 +174,9 @@ donation7 = Donation.create!({
   user: organisation2,
 })
 
-file7 = URI.open('https://www.berliner-stadtmission.de/fileadmin/_processed_/csm_Neues_Leben_482787a-1024x576_68c6e2b6d6.jpg')
-donation1.photos.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
-donation1.save!
+# file7 = URI.open('https://www.berliner-stadtmission.de/fileadmin/_processed_/csm_Neues_Leben_482787a-1024x576_68c6e2b6d6.jpg')
+# donation1.photos.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 organisation3 = User.create({
   user_name: "Zentrale Beratungsstelle für Menschen in Wohnungsnot",
@@ -194,9 +194,9 @@ donation8 = Donation.create!({
   timeframe: "Monday, Tuesday, Thursday, Friday: 9:00 - 12:00. Wednesday 3:00 p.m. - 6:00 p.m."
 })
 
-file8 = URI.open('http://www.obdachlosenfest.de/wp-content/uploads/2015/01/Levetzowstr_002.jpg')
-donation1.photos.attach(io: file8, filename: 'nes.jpg', content_type: 'image/jpg')
-donation1.save!
+# # file8 = URI.open('http://www.obdachlosenfest.de/wp-content/uploads/2015/01/Levetzowstr_002.jpg')
+# # donation1.photos.attach(io: file8, filename: 'nes.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 organisation4 = User.create({
   user_name: "Notübernachtung Franklinstr.",
@@ -214,9 +214,9 @@ donation9 = Donation.create!({
   timeframe: "Intake is between 6 p.m. and 9.30 p.m"
 })
 
-file9 = URI.open('https://news.my-hammer.de/wp-content/uploads/2017/12/Haus_3.jpg')
-donation1.photos.attach(io: file9, filename: 'notübernachtung.jpg', content_type: 'image/jpg')
-donation1.save!
+# file9 = URI.open('https://news.my-hammer.de/wp-content/uploads/2017/12/Haus_3.jpg')
+# donation1.photos.attach(io: file9, filename: 'notübernachtung.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 organisation5 = User.create!({
   user_name: "Caritas-Ambulanz für Wohnungslose",
@@ -234,9 +234,9 @@ donation10 = Donation.create!({
   timeframe: "Intake is between 6 p.m. and 9.30 p.m"
 })
 
-file10 = URI.open('https://cdn3.carinet.de/cms/contents/caritas-berlin.de/bilder-pdf-medien/bilder/beratung-und-hilfe/wohnungsnot/caritas-krankenwohnu1/arztmobil-1010025.jpg?w=400&h=400&s=Fit&e=y&k=y&c=-1')
-donation1.photos.attach(io: file10, filename: 'firstaid.jpg', content_type: 'image/jpg')
-donation1.save!
+# file10 = URI.open('https://cdn3.carinet.de/cms/contents/caritas-berlin.de/bilder-pdf-medien/bilder/beratung-und-hilfe/wohnungsnot/caritas-krankenwohnu1/arztmobil-1010025.jpg?w=400&h=400&s=Fit&e=y&k=y&c=-1')
+# donation1.photos.attach(io: file10, filename: 'firstaid.jpg', content_type: 'image/jpg')
+# donation1.save!
 
 donation_category1 = DonationCategory.create!({
   donation: donation1,
