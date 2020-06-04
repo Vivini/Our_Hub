@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   	resources :reservations, only: [ :create, :edit, :update, :destroy ]
   	#resources :categories, only: [ :index, :show ]
   end
+
   resources :users, only: [ :show ]
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
