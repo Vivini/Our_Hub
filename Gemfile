@@ -44,6 +44,7 @@ group :development, :test do
 end
 
 gem 'devise'
+gem "pundit"
 
 gem 'dotenv-rails', groups: [:development, :test]
 # keeps api key protected

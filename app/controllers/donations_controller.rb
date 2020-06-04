@@ -9,6 +9,7 @@ class DonationsController < ApplicationController
         lat: donation.latitude,
         lng: donation.longitude
       }
+    end
   end
 
   def show
