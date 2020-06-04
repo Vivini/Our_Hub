@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   	resources :reservations, only: [ :create, :edit, :update, :destroy ]
   	#resources :categories, only: [ :index, :show ]
   end
+  resources :users, only: [ :show ]
 end
