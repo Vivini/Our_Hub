@@ -1,16 +1,23 @@
 <div class="container">
+  <div class="banner">
+    <%= image_tag "home_banner_main.jpg", alt: "Image landing page" %>
+  </div>
+  <div class="home-searchform">
+    <%= simple_form_for :search, url: donations_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
+      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
+      <%= f.submit 'Search', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
   <div class="card-home">
-    <h3>Welcome to Our Hub.</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequatur voluptatibus in accusantium debitis, natus, corrupti molestiae officia quos animi, quod consectetur, corporis ipsam officiis sit magnam veritatis dolor impedit!
-    </p>
-  </div>
-  
-    <div class="home-searchform">
-      <form action="/donations" method="GET">
-        <input type="address" id="address_input" class="form-control" placeholder="District">
-        <input type="text" id="radius_input" class="form-control" placeholder="Radius">
-        <input type="submit" value="Search" class="btn btn-default">
-      </form>
+    <h2>Help homeless in you <br>neightbarhood?</h2>
+      <p>Lorem ipsum dolor sit amet, consetetur<br>
+        sadipscing elitr, sed diam nonumy eirmod<br>
+        tempor invidunt ut labore et dolore magna<br>
+        aliquyam erat, sed diam voluptua.
+
+      </p>
     </div>
-  </div>
+    <div id="homepage-btn">
+      <%= link_to "ADD YOUR DONATION", new_donation_path, class: "button-filled-home" %>
+    </div>
 </div>
