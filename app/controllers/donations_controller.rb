@@ -14,10 +14,11 @@ class DonationsController < ApplicationController
   end
 
   def create
-    @donation = Donation.new(donation_params)
+    @donation = current_user.donations.create!(donation_params)
     if @donation.save
       redirect_to donation_path(@donation)
     else
+      raise
       render :new
    end
    authorize @donation
@@ -28,7 +29,7 @@ class DonationsController < ApplicationController
   end
 
   def new
-    @donation = current_user.donations.new
+    @donation = Donation.new
     authorize @donation
   end
 
@@ -43,7 +44,7 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, :photos)
+    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
   end
 end
 
