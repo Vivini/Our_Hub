@@ -20,8 +20,7 @@ class DonationsController < ApplicationController
     else
       raise
       render :new
-   end
-   authorize @donation
+    end
   end
 
   def show
@@ -47,4 +46,3 @@ class DonationsController < ApplicationController
     params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
   end
 end
-
