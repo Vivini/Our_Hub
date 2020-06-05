@@ -62,7 +62,7 @@ donation1 = Donation.create!({
 })
 
 file1 = URI.open('https://images.unsplash.com/photo-1518388389348-b60e09ab7627?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
-donation1.photos.attach(io: file1, filename: 'sleepingbag.jpg', content_type: 'image/jpg')
+donation1.photo.attach(io: file1, filename: 'sleepingbag.jpg', content_type: 'image/jpg')
 donation1.save!
 
 user2 = User.create({
@@ -81,7 +81,7 @@ donation2 = Donation.create!({
 })
 
 file2 = URI.open('https://images.unsplash.com/photo-1580828476460-d1c11a6704bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-donation2.photos.attach(io: file2, filename: 'tampons.jpg', content_type: 'image/jpg')
+donation2.photo.attach(io: file2, filename: 'tampons.jpg', content_type: 'image/jpg')
 donation2.save!
 
 user3 = User.create({
@@ -100,7 +100,7 @@ donation3 = Donation.create!({
 })
 
 file3 = URI.open('https://images.unsplash.com/photo-1557771884-709f5996687d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
-donation3.photos.attach(io: file3, filename: 'jacket.jpg', content_type: 'image/jpg')
+donation3.photo.attach(io: file3, filename: 'jacket.jpg', content_type: 'image/jpg')
 donation3.save!
 
 user4 = User.create({
@@ -119,7 +119,7 @@ donation4 = Donation.create!({
 })
 
 file4 = URI.open('https://images.unsplash.com/photo-1511105612320-2e62a04dd044?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80')
-donation4.photos.attach(io: file4, filename: 'trainers.jpg', content_type: 'image/jpg')
+donation4.photo.attach(io: file4, filename: 'trainers.jpg', content_type: 'image/jpg')
 donation4.save!
 
 user5 = User.create({
@@ -138,7 +138,7 @@ donation5 = Donation.create!({
 })
 
 file5 = URI.open('https://images.unsplash.com/photo-1585828292920-638a2a78cb38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1069&q=80')
-donation5.photos.attach(io: file5, filename: 'firstaidkit.jpg', content_type: 'image/jpg')
+donation5.photo.attach(io: file5, filename: 'firstaidkit.jpg', content_type: 'image/jpg')
 donation5.save!
 
 organisation1 = User.create({
@@ -158,7 +158,7 @@ donation6 = Donation.create!({
 })
 
 file6 = URI.open('https://www.berliner-stadtmission.de/uploads/tx_templavoila/Standort_III.jpg')
-donation6.photos.attach(io: file6, filename: 'restaurant.jpg', content_type: 'image/jpg')
+donation6.photo.attach(io: file6, filename: 'restaurant.jpg', content_type: 'image/jpg')
 donation6.save!
 
 organisation2 = User.create({
@@ -177,7 +177,7 @@ donation7 = Donation.create!({
 })
 
 file7 = URI.open('https://www.berliner-stadtmission.de/fileadmin/_processed_/csm_Neues_Leben_482787a-1024x576_68c6e2b6d6.jpg')
-donation7.photos.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
+donation7.photo.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
 donation7.save!
 
 organisation3 = User.create({
@@ -197,7 +197,7 @@ donation8 = Donation.create!({
 })
 
 file8 = URI.open('http://www.obdachlosenfest.de/wp-content/uploads/2015/01/Levetzowstr_002.jpg')
-donation8.photos.attach(io: file8, filename: 'nes.jpg', content_type: 'image/jpg')
+donation8.photo.attach(io: file8, filename: 'nes.jpg', content_type: 'image/jpg')
 donation8.save!
 
 organisation4 = User.create({
@@ -217,7 +217,7 @@ donation9 = Donation.create!({
 })
 
 file9 = URI.open('https://res.cloudinary.com/vivini/image/upload/v1591287451/Haus_3_r6nxb6.jpg')
-donation9.photos.attach(io: file9, filename: 'notuebernachtung.jpg', content_type: 'image/jpg')
+donation9.photo.attach(io: file9, filename: 'notuebernachtung.jpg', content_type: 'image/jpg')
 donation9.save!
 
 organisation5 = User.create!({
@@ -237,7 +237,7 @@ donation10 = Donation.create!({
 })
 
 file10 = URI.open('https://cdn3.carinet.de/cms/contents/caritas-berlin.de/bilder-pdf-medien/bilder/beratung-und-hilfe/wohnungsnot/caritas-krankenwohnu1/arztmobil-1010025.jpg?w=400&h=400&s=Fit&e=y&k=y&c=-1')
-donation10.photos.attach(io: file10, filename: 'firstaid.jpg', content_type: 'image/jpg')
+donation10.photo.attach(io: file10, filename: 'firstaid.jpg', content_type: 'image/jpg')
 donation10.save!
 
 donation_category1 = DonationCategory.create!({
