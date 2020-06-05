@@ -5,13 +5,18 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <div class="list">
-	<h1>These are the resources!</h1>
+	<h3>These are the resources!</h3>
 	<ul>
 	  <% @donations.each do |donation|%>
-      <li><%= link_to donation.name, donation_path(donation)%></li>
-	  <%end%>
-    </ul>
+      <div class="card">
+        <li><%= link_to donation.name, donation_path(donation) %></li>
+       
+
+       <li> <%= cl_image_tag(donation.photos.first, :width=>300, :height=>200, :gravity=>"face", :radius=>"max", :crop=>"fill", :fetch_format=>:auto, :type=>"fetch") %></li>
+      <% end %>
+      </div>
+  </ul>
   <%= link_to "Make a Donation", new_donation_path %>
+ 
 	</div>
 </div>
-
