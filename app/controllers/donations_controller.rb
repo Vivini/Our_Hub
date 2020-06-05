@@ -16,10 +16,11 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
     if @donation.save
-      redirect_to donation_path(@donation)
+      redirect_to donations_path
     else
-      render :new
+      redirect_to donations_path
     end
+    authorize @donation
   end
 
   def show
