@@ -5,19 +5,33 @@
   <div class="home-searchform">
     <%= simple_form_for :search, url: donations_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
       <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
-      <%= f.submit 'Search', class: 'btn btn-primary' %>
+      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
+      <%= f.submit 'SEARCH', class: 'button-filled-search' %>
     <% end %>
   </div>
   <div class="card-home">
-    <h2>Help homeless in you <br>neightbarhood?</h2>
-      <p>Lorem ipsum dolor sit amet, consetetur<br>
-        sadipscing elitr, sed diam nonumy eirmod<br>
-        tempor invidunt ut labore et dolore magna<br>
+    <h2>Help homeless in you <br>neighbourhood</h2>
+      <p>Lorem ipsum dolor sit amet, consetetur
+        sadipscing elitr, sed diam nonumy eirmod
+        tempor invidunt ut labore et dolore magna
         aliquyam erat, sed diam voluptua.
-
       </p>
     </div>
     <div id="homepage-btn">
-      <%= link_to "ADD YOUR DONATION", new_donation_path, class: "button-filled-home" %>
+      <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
+    </div>
+    <div class="card-home">
+      <h2>Among people.<br>Homeless people<br>and their stories</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna
+          aliquyam erat, sed diam voluptua.<br><br>
+          Consetetur sadipscing elitr, sed diam nonumy
+          eirmod tempor invidunt ut labore et dolore
+          magna aliquyam erat, sed diam voluptua.
+        </p>
+    </div>
+    <div id="homepage-btn">
+      <%= link_to "STORIES", new_donation_path, class: "button-filled-stories" %>
     </div>
 </div>
