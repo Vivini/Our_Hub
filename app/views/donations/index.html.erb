@@ -4,9 +4,11 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="list">
-	<h3>These are the resources!</h3>
-	<ul>  <% @donations.each do |donation|%>
+  <div class="header">
+    <h3>These are the resources!</h3>
+  </div>
+	<ul>
+    <% @donations.each do |donation|%>
       <div class="card">
         <li><%= link_to donation.name, donation_path(donation) %></li>
         <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
@@ -16,5 +18,4 @@
 
   <%= link_to "Make a Donation", new_donation_path %>
 
-	</div>
 </div>
