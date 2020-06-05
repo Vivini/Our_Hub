@@ -49,6 +49,6 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, :photo)
+    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
   end
 end
