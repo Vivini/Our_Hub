@@ -9,7 +9,7 @@
 	<ul>  <% @donations.each do |donation|%>
       <div class="card">
         <li><%= link_to donation.name, donation_path(donation) %></li>
-        <li> <%= cl_image_tag donation.photo.key %></li>
+        <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
       <% end %>
       </div>
   </ul>
