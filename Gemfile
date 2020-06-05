@@ -24,13 +24,18 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem "geocoder"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'cloudinary', '~> 1.12.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -42,6 +47,7 @@ group :development, :test do
 end
 
 gem 'devise'
+gem "pundit"
 
 gem 'dotenv-rails', groups: [:development, :test]
 # keeps api key protected
