@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem "geocoder"
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'cloudinary', '~> 1.12.0'
