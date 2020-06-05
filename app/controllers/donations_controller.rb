@@ -19,8 +19,7 @@ class DonationsController < ApplicationController
       redirect_to donation_path(@donation)
     else
       render :new
-   end
-   authorize @donation
+    end
   end
 
   def show
@@ -43,7 +42,6 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, :photos)
+    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
   end
 end
-
