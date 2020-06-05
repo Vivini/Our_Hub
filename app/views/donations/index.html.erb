@@ -4,20 +4,20 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class>
-  <h3>These are the resources!</h3>
-  <ul>
-    <% @donations.each do |donation|%>
+  <div class="list">
+	<h3>These are the resources!</h3>
+	<ul>  <% @donations.each do |donation|%>
       <div class="card">
         <li><%= link_to donation.name, donation_path(donation) %></li>
-        <li> <%= cl_image_tag donation.photos.first.key %></li>
+        <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
         <% if policy(donation).destroy? %>
         <%= link_to "Destroy", donation %>
         <% end %>
       <% end %> 
       </div>
   </ul>
+
   <%= link_to "Make a Donation", new_donation_path %>
- 
-  </div>
+
+	</div>
 </div>
