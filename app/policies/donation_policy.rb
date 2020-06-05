@@ -5,19 +5,11 @@ class DonationPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    true # Anyone can see show page of a donation
-  end
-
   def create?
-    record.user == user # Only donation creator can create it
+    return true
   end
 
-  def update?
-    record.user == user # Only donation creator can update it
-  end
-
-  def destroy?
-    record.user == user # Only donation creator can destroy it
+  def show?
+    return true
   end
 end
