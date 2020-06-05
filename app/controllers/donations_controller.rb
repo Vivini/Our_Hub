@@ -21,6 +21,7 @@ class DonationsController < ApplicationController
       raise
       render :new
     end
+    authorize @donation
   end
 
   def show
@@ -33,6 +34,11 @@ class DonationsController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @donation.destroy
+    redirect_to donations_url, notice: "Donation was successfully deleted"
   end
 
   private
