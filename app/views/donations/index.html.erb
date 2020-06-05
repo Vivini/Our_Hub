@@ -12,7 +12,7 @@
         <li><%= link_to donation.name, donation_path(donation) %></li>
        
 
-       <li> <%= cl_image_tag donation.photos.first.key, :type=> "fetch" %></li>
+       <li> <%= cl_image_tag donation.photos.first.key %></li>
       <% end %>
       </div>
   </ul>
