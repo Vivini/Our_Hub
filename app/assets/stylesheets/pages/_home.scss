@@ -1,1 +1,80 @@
 // Specific CSS for your home-page
+body { font-family: 'Roboto', sans-serif;
+     background-color: #F4F4F4;
+}
+
+.container {
+  width: 375px;
+  margin: auto;
+  padding: 0px;
+  background-color: #0D0D0D;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.card-home {
+  width: 85%;
+  margin: 19px auto;
+}
+
+.card-home p {
+  margin-top: 20px;
+  line-height: 20px;
+  opacity: 0.7;
+  color: #E3E3E3;
+}
+
+.card-home h2 {
+  font-family: 'Roboto', sans-serif;
+  line-height: 35px;
+  color: #E6E6E4;
+}
+
+
+
+/* overwriting bootstrap from defaults */
+
+.home-searchform {
+  width: 95%;
+}
+
+.form-group {
+  width: 100%;
+  font-size: 13px;
+  padding-left: 18px;
+  margin-bottom: 0px;
+}
+
+.form-control {
+  margin-top: 0px;
+  margin-bottom: 11px;
+  border-radius: 10px;
+  border-style: none;
+  height: 50px;
+  background-color: #EDEFF2;
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+#homepage-btn {
+  width: 100%;
+  display: flex;
+}
+
+.button-filled-home {
+  padding: 16px 10px 17px 10px;
+  color: #23262B;
+  font-weight: bold;
+  background-color: #F6D365;
+  font-size: 13px;
+  border-radius: 7px;
+  width: 47%;
+  text-align: center;
+  margin-left: 5%;
+}
