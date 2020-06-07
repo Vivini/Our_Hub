@@ -16,9 +16,8 @@ class DonationsController < ApplicationController
   def create
     @donation = current_user.donations.create!(donation_params)
     if @donation.save
-      redirect_to donation_path(@donation)
+      redirect_to donations_path
     else
-      raise
       render :new
     end
     authorize @donation
