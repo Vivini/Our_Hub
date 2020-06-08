@@ -1,2 +1,44 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "components/map";
+
+.header h3 {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}
+
+.map {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.marker {
+  background-image: url('../assets/images/mapmarker.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.list {
+  text-align: center;
+  color: white;
+}
+
+.card {
+  text-align: center;
+  background-color: #272426;
+}
+
+body ul {
+  padding: 0px;
+}
+
+
