@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :auth_visit
   include Pundit
 
   # Pundit: white-list approach.
@@ -17,5 +18,13 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def auth_visit
+    if Visit.find_by(token: cookies.encrypted[:token])
+      @visit = Visit.find_by(token: cookies.encrypted[:token])
+    else
+      redirect_to new_visit_path
+    end
   end
 end
