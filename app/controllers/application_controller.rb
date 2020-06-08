@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
     if Visit.find_by(token: cookies.encrypted[:token])
       @visit = Visit.find_by(token: cookies.encrypted[:token])
     else
-      redirect_to new_visit_path
+      token = SecureRandom.hex(8)
+      cookies.encrypted[:token] = token
+      @visit = Visit.create(token: token)
     end
   end
 end
