@@ -3,9 +3,9 @@
     <%= image_tag "home_banner_main.jpg", alt: "Image landing page" %>
   </div>
   <div class="home-searchform">
-    <%= simple_form_for :search, url: donations_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
-      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
+    <%= simple_form_for :search, url: donations_path, method: 'GET', class: 'from-inline' do |f| %>
+      <%= f.input :category, prompt: 'choose a category', label:false, class: 'from-inline', collection: Category.all %>
+      <%= f.input :category, prompt: 'max. distance of donation', label:false, collection: Category.all %>
       <%= f.submit 'SEARCH', class: 'button-filled-search' %>
     <% end %>
   </div>
@@ -34,4 +34,7 @@
     <div id="homepage-btn">
       <%= link_to "STORIES", new_donation_path, class: "button-filled-stories" %>
     </div>
+      <div class="footer-element">
+    <%= image_tag "home_footer_element.jpg", alt: "Footer element home page" %>
+  </div>
 </div>

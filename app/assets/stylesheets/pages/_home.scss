@@ -33,6 +33,12 @@ body { font-family: 'Roboto', sans-serif;
   font-size: 28px;
 }
 
+.footer-element img {
+  width: 60%;
+  position: sticky;
+  left: 150px;
+}
+
 
 
 /* overwriting bootstrap from defaults */
@@ -48,13 +54,18 @@ body { font-family: 'Roboto', sans-serif;
   margin-bottom: 0px;
 }
 
+.from-inline {
+  font-size: 5px;
+  font-color: white;
+}
+
 .form-control {
   margin-top: 0px;
   margin-bottom: 11px;
   border-radius: 10px;
   border-style: none;
   height: 50px;
-  background-color: #EDEFF2;
+  background-color: #DBDBDB;
   padding: 10px;
 }
 
@@ -78,7 +89,7 @@ body { font-family: 'Roboto', sans-serif;
   width: 33%;
   text-align: center;
   margin-left: 5%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .button-filled-add {
@@ -104,5 +115,5 @@ body { font-family: 'Roboto', sans-serif;
   width: 33%;
   text-align: center;
   margin-left: 13%;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
