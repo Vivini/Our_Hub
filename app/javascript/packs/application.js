@@ -28,7 +28,7 @@ import "bootstrap";
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 
-initMapbox();
+// initMapbox();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,8 +39,11 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 import { klickBurgerMenu } from '../components/navbar';
+import { flexCardGrow } from '../components/flexcard';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
    klickBurgerMenu();
+   flexCardGrow();
 });
+
