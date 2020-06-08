@@ -1,20 +1,35 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "components/map";
 
-.header h3 {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+.container {
+  width: 375px;
+  margin: auto;
+  padding: 0px;
+  background-color: #272426;
+  color: #fcfcfc;
 }
+
 li {
   list-style-type: none;
 }
+
+/* Mapbox position */
 
 .map {
   text-align: center;
   display: flex;
   align-items: center;
   margin: auto;
+}
+
+.marker {
+  background-image: url('../assets/images/mapmarker.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .list {
@@ -27,8 +42,66 @@ li {
   background-color: #272426;
 }
 
-body ul {
-  padding: 0px;
+/* Flex Cards */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
+.list-item {
+  width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+  background-color: #E5E5E4;
+
+  .list-item-trigger {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+  }
+
+  .list-item-pic {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .list-item-link {
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    bottom: 0px;
+    padding: 16px;
+    width: 100%;
+    left: 0px;
+    z-index: 2;
+  }
+}
+
+.list-item.expanded {
+  height: 245px;
+
+  .list-item-trigger {
+    display: none;
+  }
+
+  .list-item-link {
+    display: flex;
+  }
+
+  .list-item-pic {
+    display: block;
+  }
+}
 

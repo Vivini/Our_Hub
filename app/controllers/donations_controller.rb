@@ -47,12 +47,21 @@ class DonationsController < ApplicationController
   end
 
   def edit
+    authorize @donation
   end
+
+  def update
+    if @donation.update(donation_params)
+      redirect_to @donation, notice: "Donation was succesfully updated."
+    else
+      render :edit
+    end
 
   def destroy
     @donation.destroy
-    redirect_to donations_url, notice: "Donation was successfully deleted"
+    redirect_to user_path(:id), notice: "Donation was succesfully deleted."
   end
+end
 
   private
 
