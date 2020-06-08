@@ -56,12 +56,12 @@ class DonationsController < ApplicationController
     else
       render :edit
     end
+  end
 
   def destroy
     @donation.destroy
     redirect_to user_path(:id), notice: "Donation was succesfully deleted."
   end
-end
 
   private
 

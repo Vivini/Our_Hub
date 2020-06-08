@@ -20,7 +20,7 @@
     <% @donations.each do |donation|%>
       <div class= "list-item">
         <span class="list-item-trigger"><%= donation.name %></span>
-        <%= cl_image_tag donation.photo.key, class: "list-item-pic"%>
+        <%= cl_image_tag donation.photos.key, class: "list-item-pic"%>
         <%= link_to donation_path(donation), class: "list-item-link" do %>
           <span><%= donation.name %></span>
           <div class="icon">
@@ -31,8 +31,5 @@
     <% end %>
   </div>
 
-
-
- </div>
 </div>
 
