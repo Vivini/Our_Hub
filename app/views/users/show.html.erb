@@ -1,15 +1,15 @@
-<h2>Welcome, <%= @user.user_name.capitalize! %>!</h2>
-<h3>Your current donations:</h3>
-<ul>
-    <% @user.donations.each do |donation|%>
-      <div class="card">
-        <li><%= link_to donation.name, donation_path(donation) %></li>
-        <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
-      <% end %>
-      </div>
-  </ul>
-
-<div id="homepage-btn">
-      <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
+<div class="container">
+  <h2>Welcome, <%= @user.user_name.capitalize! %>!</h2>
+  <h3>Your current donations:</h3>
+  <ul>
+      <% @user.donations.each do |donation|%>
+        <div class="card">
+          <li><%= link_to donation.name, donation_path(donation) %></li>
+          <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
+        <% end %>
+        </div>
+    </ul>
+  <div id="homepage-btn">
+        <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
+  </div>
 </div>
-
