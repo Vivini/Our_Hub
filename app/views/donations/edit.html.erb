@@ -1,0 +1,24 @@
+<div class="container">
+      <div class="card-home">
+        <div class="form_group">
+          <%= simple_form_for @donation do |f| %>
+
+          <%= f.input :name,  prompt: "Name" %>
+
+          <%= f.input :address, prompt: "Address" %>
+
+          <%= f.input :description, prompt: "Description" %>
+
+          <%= f.input :timeframe, prompt: "Details"%>
+
+          <%= f.input :photo, as: :file, input_html: { multiple: false } %>
+
+          <%= f.button :submit, "Update donation", class: "btn-primary" %>
+
+          <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+
+          <% end %>
+          <br>
+        </div>
+      </div>
+</div>
