@@ -45,7 +45,7 @@ class DonationsController < ApplicationController
 
   def destroy
     @donation.destroy
-    redirect_to @donations, notice: "Donation was succesfully deleted."
+    redirect_to user_path(:id), notice: "Donation was succesfully deleted."
   end
 end
 

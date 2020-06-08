@@ -6,9 +6,12 @@
         <div class="card">
           <li><%= link_to donation.name, donation_path(donation) %></li>
           <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
+          <li><%=link_to "edit", edit_donation_path(donation) %></li>
+          <li><%=link_to "delete", donation_path(donation), method: :delete, data: { confirm: 'Are you sure?' } %></li>
         <% end %>
         </div>
     </ul>
+
   <div id="homepage-btn">
         <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
   </div>
