@@ -2,15 +2,29 @@ class DonationsController < ApplicationController
 
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
-    @donations = Donation.all
-    @donations = policy_scope(Donation)
-    @donations = Donation.geocoded # returns donations with coordinates
-    @markers = @donations.map do |donation|
+    @donations = policy_scope(Donation).all 
+    if params[:categories].present?
+      @donations = @donations.joins(:categories).where("categories.name ILIKE ?", "%#{params[:categories]}%")
+    end
+    if params[:address].present?
+      @donations= @donations.near(params[:address], 100)
+    end
+    if params[:query].present?
+      sql_query = " \
+        donations.name ILIKE :query \
+        OR donations.description ILIKE :query \
+        OR categories.name ILIKE :query \
+      "
+      @donations = @donations.joins(:categories).where(sql_query, query: "%#{params[:query]}%")
+    end
+    #@donations = policy_scope(Donation)
+    #@donations = Donation.geocoded # returns donations with coordinates
+    @markers = @donations.geocoded.map do |donation|
       {
         lat: donation.latitude,
         lng: donation.longitude
       }
-    end
+    end 
   end
 
   def create

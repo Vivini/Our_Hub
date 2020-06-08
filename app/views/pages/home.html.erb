@@ -3,10 +3,28 @@
     <%= image_tag "home_banner_main.jpg", alt: "Image landing page" %>
   </div>
   <div class="home-searchform">
-    <%= simple_form_for :search, url: donations_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
-      <%= f.input :category, placeholder: 'Choose a category', label:false, collection: Category.all %>
-      <%= f.submit 'SEARCH', class: 'button-filled-search' %>
+    <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
+      <%= text_field_tag :address,
+      params[:address],
+      class: "form-inline",
+      placeholder: "Find by proximate location"
+      %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-inline",
+      placeholder: "What are you looking for?"
+      %>
+      <%= submit_tag "SEARCH", class: "button-filled-search" %>
+    <% end %>
+  </div>
+  <div class="home-searchform">
+    <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
+      <%= text_field_tag :categories,
+      params[:categories],
+      class: "form-inline",
+      placeholder: "Find by categories"
+      %>
+      <%= submit_tag "SEARCH", class: "button-filled-search" %>
     <% end %>
   </div>
   <div class="card-home">
