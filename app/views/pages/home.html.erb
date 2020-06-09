@@ -4,6 +4,9 @@
   </div>
   <div class="home-searchform">
     <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
+      <%= label_tag :query do %>
+        <h2><%= "Find resources near you"%></h2>
+      <%end%>
       <%= text_field_tag :query,
       params[:query],
       class: "form-inline",
@@ -21,7 +24,9 @@
    <br>
   <div class="home-searchform">
     <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
-      <%= label_tag :categories %>
+      <%= label_tag :categories do %>
+        <h2><%= "Want to search by categories?"%></h2>
+      <%end%>
       <%= select_tag :categories, options_from_collection_for_select(@categories, "id", "name")%>
       <%#= text_field_tag :categories,
       params[:categories],
