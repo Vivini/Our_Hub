@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   def index
     @donations = policy_scope(Donation).all 
     if params[:categories].present?
-      @donations = @donations.joins(:categories).where("categories.name ILIKE ?", "%#{params[:categories]}%")
+      @donations = @donations.joins(:categories).where("categories.id =?", "#{params[:categories]}")
     end
     if params[:address].present?
       @donations= @donations.near(params[:address], 100)
@@ -62,10 +62,6 @@ class DonationsController < ApplicationController
     @donation.destroy
     redirect_to user_path(:id), notice: "Donation was succesfully deleted."
   end
-<<<<<<< HEAD
-=======
-end
->>>>>>> master
 
   private
 
