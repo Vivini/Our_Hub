@@ -53,6 +53,10 @@ user1 = User.create!({
   private: true
 })
 
+file11 = URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')
+user1.photo.attach(io: file11, filename: 'user1profile.jpg', content_type: 'image/jpg')
+user1.save!
+
 donation1 = Donation.create!({
   name: "Sleeping Bag",
   address: "Silbersteinstraße 98, Berlin",
@@ -71,6 +75,10 @@ user2 = User.create({
   password: "123456",
   private: true
 })
+
+file12 = URI.open('https://images.unsplash.com/photo-1504911539020-cfb0f7887a5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+user2.photo.attach(io: file12, filename: 'user2profile.jpg', content_type: 'image/jpg')
+user2.save!
 
 donation2 = Donation.create!({
   name: "Women's Hygiene Items",
@@ -91,6 +99,10 @@ user3 = User.create({
   private: true
 })
 
+file13 = URI.open('https://unsplash.com/photos/crXcq7JqjVU')
+user3.photo.attach(io: file13, filename: 'user3profile.jpg', content_type: 'image/jpg')
+user3.save!
+
 donation3 = Donation.create!({
   name: "Men's Winter Jacket",
   address: "Urbanstrasse 116, Berlin",
@@ -110,6 +122,10 @@ user4 = User.create({
   private: true
 })
 
+file14 = URI.open('https://images.unsplash.com/photo-1568290696106-ace229a158a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+user4.photo.attach(io: file14, filename: 'user4profile.jpg', content_type: 'image/jpg')
+user4.save!
+
 donation4 = Donation.create!({
   name: "Mens' Trainers",
   address: "Hermannstraße 110, Berlin",
@@ -128,6 +144,10 @@ user5 = User.create({
   password: "123456",
   private: true
 })
+
+file15 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+user5.photo.attach(io: file15, filename: 'user5profile.jpg', content_type: 'image/jpg')
+user5.save!
 
 donation5 = Donation.create!({
   name: "First Aid Products",
@@ -149,6 +169,10 @@ organisation1 = User.create({
   organization_address: "Joachim-Friedrich-Str. 46, Berlin"
 })
 
+file16 = URI.open('https://www.berliner-stadtmission.de/uploads/tx_templavoila/Standort_III.jpg')
+organisation1.photo.attach(io: file16, filename: 'org1profile.jpg', content_type: 'image/jpg')
+organisation1.save!
+
 donation6 = Donation.create!({
   name: "Alcohol-Free Restaurant",
   address: "Joachim-Friedrich-Str. 46, Berlin",
@@ -169,6 +193,10 @@ organisation2 = User.create({
   organization_address: "Lehrter Str. 68, Berlin"
 })
 
+file17 = URI.open('https://www.berliner-stadtmission.de/fileadmin/_processed_/csm_Neues_Leben_482787a-1024x576_68c6e2b6d6.jpg')
+organisation2.photo.attach(io: file17, filename: 'org2profile.jpg', content_type: 'image/jpg')
+organisation2.save!
+
 donation7 = Donation.create!({
   name: "Individual Help First Aid.",
   address: "Lehrter Str. 68, Berlin",
@@ -187,6 +215,10 @@ organisation3 = User.create({
   private: false,
   organization_address: "Levetzowstraße 12a, Berlin"
 })
+
+file18 = URI.open('http://www.obdachlosenfest.de/wp-content/uploads/2015/01/Levetzowstr_002.jpg')
+organisation3.photo.attach(io: file18, filename: 'org3profile.jpg', content_type: 'image/jpg')
+organisation3.save!
 
 donation8 = Donation.create!({
   name: "Advice For Homeless",
@@ -208,6 +240,10 @@ organisation4 = User.create({
   organization_address: "Franklinstraße 27a, Berlin"
 })
 
+file19 = URI.open('https://res.cloudinary.com/vivini/image/upload/v1591287451/Haus_3_r6nxb6.jpg')
+organisation4.photo.attach(io: file19, filename: 'org4profile.jpg', content_type: 'image/jpg')
+organisation4.save!
+
 donation9 = Donation.create!({
   name: "Emergency Overnight Shelter",
   address: "Franklinstraße 27a, Berlin",
@@ -227,6 +263,10 @@ organisation5 = User.create!({
   private: false,
   organization_address: "Jebensstraße 3, Berlin"
 })
+
+file20 = URI.open('https://cdn3.carinet.de/cms/contents/caritas-berlin.de/bilder-pdf-medien/bilder/beratung-und-hilfe/wohnungsnot/caritas-krankenwohnu1/arztmobil-1010025.jpg?w=400&h=400&s=Fit&e=y&k=y&c=-1')
+organisation5.photo.attach(io: file20, filename: 'org5profile.jpg', content_type: 'image/jpg')
+organisation5.save!
 
 donation10 = Donation.create!({
   name: "Primary Care",

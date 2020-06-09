@@ -1,4 +1,3 @@
-
 <div class="container-nav <%= 'white-navbar' if @white_navbar.present?%>">
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to root_path, class: 'navbar-brand' do %>
@@ -23,3 +22,9 @@
     </nav>
   </div>
 </div>
+
+    <li class="actions">
+
+    <%= link_to "Dashboard", user_path(current_user), class: "nav-link" if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key if user_signed_in? %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" if user_signed_in? %>
