@@ -7,21 +7,11 @@
     style="width: 90%; height: 600px; align-items: center;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      <script>
-        // TO MAKE THE MAP APPEAR YOU MUST
-        // ADD YOUR ACCESS TOKEN FROM
-        // https://account.mapbox.com
-        mapboxgl.accessToken = 'pk.eyJ1Ijoidml2aW5pIiwiYSI6ImNrYTZsdWk3NjAxNHYycW16eDdzaWZwODgifQ.NoiyuGN1LjdLtHntnFXuOA';
-        var map = new mapboxgl.Map({
-        container: 'map', // container id
-        style: 'mapbox://styles/vivini/ckb686a1t3g6f1ionykd6v6gz', //hosted style id
-        center: [52.52, 13.41], // starting position
-        zoom: 3 // starting zoom
-        });
-      </script>
   </div>
+
+
   <div class="list">
-    <% @donations.each do |donation|%>
+    <% @donations.each do |donation| %>
       <div class= "list-item">
         <span class="list-item-trigger"><%= donation.name %></span>
         <%= cl_image_tag donation.photo.key, class: "list-item-pic"%>
@@ -31,9 +21,7 @@
             <i class="fas fa-circle"></i>
           </div>
         <% end %>
-      </div>
+    </div>
     <% end %>
   </div>
 </div>
-
-
