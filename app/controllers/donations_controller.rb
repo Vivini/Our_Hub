@@ -68,7 +68,7 @@ class DonationsController < ApplicationController
   private
 
   def set_donation
-    @donation = Donation.find(params[:id])
+    @donation = Donation.find(params[:donation_id])
     authorize @donation
   end
 

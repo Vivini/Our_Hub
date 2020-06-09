@@ -6,16 +6,23 @@ class ReservationsController < ApplicationController
 
   def new
     @donation = Donation.find(params[:donation_id])
-    @reservation = Reservation.new(reservation_params)
-    @reservation.donation = @donation
-    @reservation.user = current_user
-    @reservation.status = "Pending"
+    @donation = Donation.new
+    authorize @reservation
+  end 
 
-    if reservation.save
-      redirect_to donation_path
+  def create
+    @donation = Donation.find(params[:donation_id])
+    @reservation = Reservation.new
+    @reservation.donation = @donation
+    @reservation.visit = @visit
+    @reservation.status = "Reserved"
+
+    if @reservation.save
+      redirect_to donation_path(:donation_id)
     else
       render :new
     end
+    authorize @reservation
   end
   
   def show
@@ -27,8 +34,9 @@ class ReservationsController < ApplicationController
   def update
   	@donation = Donation.find(params[:donation_id])
   	@reservation = Reservation.find(params[:id])
-  	@reservation.status = "Pending"
+  	@reservation.status = "Reserved"
     @reservation.save!
+    # ?? Change to ""
     redirect_to donation_reservation_path
   end
 
@@ -39,9 +47,9 @@ class ReservationsController < ApplicationController
     redirect_to root_path
   end
 
-  private
+  #private
 
-  def reservation_params
-    params.require(:reservation).permit(:status)
-  end
+  # def reservation_params
+  #   params.require(:reservation).permit(:status)
+  # end
 end
