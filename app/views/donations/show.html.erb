@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <h2><%= @donation.name %></h2>
+  </div>
+  <div>
+    <%= cl_image_tag @donation.photo.key, class: "list-item-pic"%>
+  </div>
+  <div>
+    <p><%= @donation.description %></p>
+    <p>Where? <br><%= @donation.address %></p>
+    <% if @donation.user.private == true %>
+       <div><p>When? <br><%= @donation.timeframe %>, <%= @donation.updated_at.strftime("%A %e %B %Y") %></p></div>
+      <% else %>
+       <div><p>When? <br><%= @donation.timeframe %></p></div>
+    <% end %>
+    <p>Offered by: <br><%= @donation.user.user_name.split.map(&:capitalize).join(' ') %></p>
+  </div>
+  <div></div>
+</div>
+
+
+
+

@@ -1,4 +1,4 @@
-<div class="container-nav">
+<div class="container-nav <%= 'white-navbar' if @white_navbar.present?%>">
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to root_path, class: 'navbar-brand' do %>
       <h1>Our Hub.</h1>

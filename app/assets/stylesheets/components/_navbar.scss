@@ -36,6 +36,7 @@ html {
     margin-left: 8px;
     line-height: inherit;
     white-space: nowrap;
+    z-index: 101;
 }
 
 .navbar-brand h1 {
@@ -43,6 +44,19 @@ html {
   font-size: 25px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.navbar h1 {
+  z-index: 101;
+}
+
+.white-navbar {
+  h1 {
+    color: white;
+  }
+  .bar {
+    background-color: white;
+  }
 }
 
 /** styling for the hamburger menu **/
