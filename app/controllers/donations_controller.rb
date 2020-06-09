@@ -14,7 +14,7 @@ class DonationsController < ApplicationController
   end
 
   def create
-    @donation = Donation.new(donation_params)
+    @donation = current_user.donations.create!(donation_params)
     if @donation.save
       redirect_to donations_path
     else
@@ -28,7 +28,7 @@ class DonationsController < ApplicationController
   end
 
   def new
-    @donation = current_user.donations.new
+    @donation = Donation.new
     authorize @donation
   end
 
