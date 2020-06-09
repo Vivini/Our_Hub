@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
     @donations = Donation.all
@@ -16,10 +16,9 @@ class DonationsController < ApplicationController
   def create
     @donation = current_user.donations.create!(donation_params)
     if @donation.save
-      redirect_to donation_path(@donation)
+      redirect_to donations_path
     else
-      raise
-      render :new
+      redirect_to donations_path
     end
     authorize @donation
   end
@@ -34,12 +33,21 @@ class DonationsController < ApplicationController
   end
 
   def edit
+    authorize @donation
   end
+
+  def update
+    if @donation.update(donation_params)
+      redirect_to @donation, notice: "Donation was succesfully updated."
+    else
+      render :edit
+    end
 
   def destroy
     @donation.destroy
-    redirect_to donations_url, notice: "Donation was successfully deleted"
+    redirect_to user_path(:id), notice: "Donation was succesfully deleted."
   end
+end
 
   private
 
@@ -49,6 +57,6 @@ class DonationsController < ApplicationController
   end
 
   def donation_params
-    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, photos: [])
+    params.require(:donation).permit(:name, :address, :description, :longitude, :latitude, :timeframe, :photo)
   end
 end
