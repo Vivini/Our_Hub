@@ -21,6 +21,7 @@
    <br>
   <div class="home-searchform">
     <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
+      <%= label_tag :categories %>
       <%= select_tag :categories, options_from_collection_for_select(@categories, "id", "name")%>
       <%#= text_field_tag :categories,
       params[:categories],
