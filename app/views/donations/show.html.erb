@@ -1,0 +1,27 @@
+<div class="container show">
+  <div class="show-image">
+    <%= cl_image_tag @donation.photo.key, id:"show-banner" %>
+  </div>
+  <div>
+    <%= image_tag "show_background_element_left.png", id: "show-decoration-left", alt: "decoration element yellow" %>
+  </div>
+  <div class="show-details">
+    <div id="info-name">
+      <h1><%= @donation.name %></h1>
+      <h3>Donator:<br>Organization</h3>
+    </div>
+    <div id="info-description">
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+        sed diam nonumy eirmod tempor invidunt ut labore et dolore
+        magna aliquyam erat, sed diam voluptua.
+      </p>
+    </div>
+    <div id="show-buttons">
+      <button class="button-filled black">ADD TO LIST</button>
+      <button class="button-filled outline">MY RESERVATIONS</button>
+    </div>
+    <div>
+      <%= image_tag "show_background_element_footer.png", id: "show-decoration-footer", alt: "decoration element black" %>
+    </div>
+  </div>
+</div>
