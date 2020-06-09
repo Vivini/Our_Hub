@@ -62,6 +62,10 @@ class DonationsController < ApplicationController
     @donation.destroy
     redirect_to user_path(:id), notice: "Donation was succesfully deleted."
   end
+<<<<<<< HEAD
+=======
+end
+>>>>>>> master
 
   private
 

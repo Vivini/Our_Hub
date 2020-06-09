@@ -12,7 +12,7 @@ class DonationPolicy < ApplicationPolicy
   def show?
     return true
   end
-
+  
   def edit?
     record.user == user
   end
