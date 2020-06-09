@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+  def set_white_navbar
+    @white_navbar = true
+  end
 
   private
 

@@ -54,7 +54,7 @@ user1 = User.create!({
 })
 
 donation1 = Donation.create!({
-  name: "Sleeping bag",
+  name: "Sleeping Bag",
   address: "Silbersteinstraße 98, Berlin",
   description: "Brand new winter sleeping bag",
   user: user1,
@@ -73,7 +73,7 @@ user2 = User.create({
 })
 
 donation2 = Donation.create!({
-  name: "Women's hygiene items",
+  name: "Women's Hygiene Items",
   address: "Leinestraße 2, Berlin",
   description: "Tampons and Sanitary Pads, in sealed packaging",
   user: user2,
@@ -92,7 +92,7 @@ user3 = User.create({
 })
 
 donation3 = Donation.create!({
-  name: "Men's winter jacket",
+  name: "Men's Winter Jacket",
   address: "Urbanstrasse 116, Berlin",
   description: "Size L and very warm",
   user: user3,
@@ -111,7 +111,7 @@ user4 = User.create({
 })
 
 donation4 = Donation.create!({
-  name: "Size 44 mens' trainers",
+  name: "Mens' Trainers",
   address: "Hermannstraße 110, Berlin",
   description: "Men's trainers in size eu44. Used but in good condition",
   user: user4,
@@ -130,7 +130,7 @@ user5 = User.create({
 })
 
 donation5 = Donation.create!({
-  name: "Selection of first aid products",
+  name: "First Aid Products",
   address: "Flughafenstraße 82, Berlin",
   description: "Plasters, antiseptic spray and disinfectant wipes. All brand new in sealed packaging.",
   user: user5,
@@ -150,7 +150,7 @@ organisation1 = User.create({
 })
 
 donation6 = Donation.create!({
-  name: "Alcohol-free restaurant very close to the Ku'damm",
+  name: "Alcohol-Free Restaurant",
   address: "Joachim-Friedrich-Str. 46, Berlin",
   description: "People with and without an apartment can get social counseling, pastoral care and good food. You can rest, eat, talk, play or read. There is also a clothing offer, a small washing center and the opportunity to take a shower.",
   user: organisation1,
@@ -170,7 +170,7 @@ organisation2 = User.create({
 })
 
 donation7 = Donation.create!({
-  name: "Individual help for clients who are unable to access aid.",
+  name: "Individual Help First Aid.",
   address: "Lehrter Str. 68, Berlin",
   description: "The team of the Mobile Individual Case Aid travels across Berlin and seeks out people who are no longer able to use the Berlin aid and care system on their own. Target clients are homeless and homeless people who are in particularly poor physical and mental health.",
   user: organisation2,
@@ -189,7 +189,7 @@ organisation3 = User.create({
 })
 
 donation8 = Donation.create!({
-  name: "Advice for those who are homeless or at risk of homelessness",
+  name: "Advice For Homeless",
   address: "Levetzowstraße 12a, Berlin",
   description: "The team consists of social workers, administrative staff and volunteers. We also offer advice in English and French.",
   user: organisation3,
@@ -209,7 +209,7 @@ organisation4 = User.create({
 })
 
 donation9 = Donation.create!({
-  name: "Emergency overnight shelter",
+  name: "Emergency Overnight Shelter",
   address: "Franklinstraße 27a, Berlin",
   description: "The home offers homeless people help without bureaucracy. The only prerequisites for admission are homelessness and relative destitution.",
   user: organisation4,
@@ -229,7 +229,7 @@ organisation5 = User.create!({
 })
 
 donation10 = Donation.create!({
-  name: "Medical primary and primary care",
+  name: "Primary Care",
   address: "Jebensstraße 3, Berlin",
   description: "The Caritas outpatient clinic offers free, unbureaucratic and, if desired, anonymous medical and nursing help.",
   user: organisation5,
