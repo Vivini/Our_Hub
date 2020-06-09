@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
     @donations = policy_scope(Donation).all 
