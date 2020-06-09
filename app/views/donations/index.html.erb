@@ -7,7 +7,7 @@
 
 
   <div class="list">
-    <% @donations.each do |donation|%>
+    <% @donations.each do |donation| %>
       <div class= "list-item">
         <span class="list-item-trigger"><%= donation.name %></span>
         <%= cl_image_tag donation.photo.key, class: "list-item-pic"%>
@@ -18,5 +18,7 @@
           </div>
         <% end %>
       </div>
+      <% end %>
  </div>
+</div>
 
