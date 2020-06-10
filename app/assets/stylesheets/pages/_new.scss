@@ -1,60 +1,48 @@
-// Import page-specific CSS files here.
-@import "home";
 
- .form-group {
-	color: white;
+.container.new {
+  height: 100vh;
+  background-color: #E5E5E5 !important;
 }
 
-.header h3 {
-  color: white;
+.new h2 {
   font-family: 'Roboto', sans-serif;
-  text-align: center;
-
-}
-li {
-  list-style-type: none;
-}
-
-.map {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  margin: auto;
+  line-height: 30px;
+  color: #222222;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 140px;
+  margin-left: 12%;
 }
 
-.list {
-  text-align: center;
-  color: white;
-}
+/* overwriting bootstrap from defaults */
 
-.card {
-  text-align: center;
-  background-color: #272426;
-}
-
-.form_group {
-  color: white;
-  text-align: center;
-  background-color: #272426;
-}
-
-#donation-form {
-	color: white;
-}
-body ul {
-  padding: 0px;
-  color: white;
-}
-
-.home-searchform {
+.new-searchform {
+  padding-top: 30px;
   width: 95%;
 }
 
 .form-group {
-  width: 100%;
+  width: 80%;
   font-size: 13px;
-  padding-left: 18px;
   margin-bottom: 0px;
+  padding-left: 0px;
+  box-shadow: 2px 7px 15px rgba(39, 39, 39, 0.1);
+  margin-left: 12%;
+  border-radius: 10px;
+  z-index: 50;
+  position: relative;
+
+    .string {
+      font-size: 12px;
+      color: #969696;
+      padding-left: 16px;
+    }
+
+    .text {
+      font-size: 12px;
+      padding-left: 16px;
+      padding-top: 25px;
+    }
 }
 
 .form-control {
@@ -63,56 +51,37 @@ body ul {
   border-radius: 10px;
   border-style: none;
   height: 50px;
-  background-color: #EDEFF2;
+  background-color: #ececec;
   padding: 10px;
 }
 
 .form-control:focus {
   border-color: none;
   box-shadow: none;
+  background-color: #fdfcfc;
 }
 
-#homepage-btn {
+.button-filled.create {
+  margin-left: 12%;
+  margin-top: 15px;
+  width: 45%;
+  margin-bottom: 0px;
+  z-index: 60;
+  position: relative;
+}
+
+/* decoration elements */
+
+#new-header-decoration img {
+  width: 50%;
+  position: absolute;
+  z-index: 0;
+  top: 0%;
+}
+
+#new-footer-decoration img {
   width: 100%;
-  display: flex;
+  position: absolute;
+  z-index: 0;
+  bottom: 0%;
 }
-
-.button-filled-search {
-  padding: 16px 9px 16px 9px;
-  color: #23262B;
-  font-weight: bold;
-  background-color: #F6D365;
-  font-size: 12px;
-  border-radius: 7px;
-  width: 33%;
-  text-align: center;
-  margin-left: 5%;
-  margin-bottom: 10px;
-}
-
-.button-filled-add {
-  padding: 16px 9px 16px 9px;
-  color: #23262B;
-  font-weight: bold;
-  background-color: #F6D365;
-  font-size: 12px;
-  border-radius: 7px;
-  width: 41%;
-  text-align: center;
-  margin-left: 13%;
-  margin-bottom: 50px;
-}
-
-.button-filled-stories {
-  padding: 16px 9px 16px 9px;
-  color: #23262B;
-  font-weight: bold;
-  background-color: #F6D365;
-  font-size: 12px;
-  border-radius: 7px;
-  width: 33%;
-  text-align: center;
-  margin-left: 13%;
-  margin-bottom: 100px;
-}
-

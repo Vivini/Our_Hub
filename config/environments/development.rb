@@ -8,7 +8,6 @@ Rails.application.configure do
   config.active_job.queue_adapter     = :sidekiq
   # Do not eager load code on boot.
   config.eager_load = false
-
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -62,4 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_job.queue_adapter     = :inline
+  config.hosts << /[a-z0-9]+\.ngrok\.io/
 end
