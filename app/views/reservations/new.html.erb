@@ -1,10 +1,21 @@
 <div class="container">
 	<h4>Reserve the donation</h4>
-  <%= simple_form_for @donation do |f| %>
-    <div class= "form-group">
-      <%= @donation.name %>
-      <%= @donation.address %>
-      <%= f.submit "Send request", class: "button-filled" %>
+  <% @visit.donation.each do |donation| %>
+  <div class=“bg-light rounded w-100 d-flex p-3” style=“background-color: rgba(245, 245, 245, 0.5); margin: 50px auto auto auto”>
+    <%= cl_image_tag donation.photo.key, height: 200, class: “align-self-center”%>
+    <div class=“donationd-body”>
+        <ul style=“list-style: none”>
+          <li><strong>Resource: </strong><%= donation.name %></li>
+          <br>
+          <li><strong>Location: </strong><%= donation.address %></li>
+          <br>
+          <li><strong>Details: </strong><%= donation.timeframe %></li>
+          <br>
+          <li><strong>Offered by:</strong> <%= donation.user.user_name %> </li>
+        </div>
+      <div class=“row”>
+      <div class=“row”>
+        <%= link_to “”, reservation_path(reservation), method: :delete, class: “fas fa-ban donationd-remove-link col-1” %>
+      </div>
     </div>
-  <% end %>
-</div>
+    <% end %>
