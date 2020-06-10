@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    @reservations = policy_scope(Reservation).where(visit: @visit)
   end
 
   def new
@@ -40,7 +40,6 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @donation = Donation.find(params[:donation_id])
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to root_path
