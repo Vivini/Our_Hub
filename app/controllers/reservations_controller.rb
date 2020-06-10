@@ -5,9 +5,11 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @donation = Donation.new
+    @donation = Donation.find(params[:donation_id])
+    @reservation = Reservation.new
     authorize @reservation
-  end 
+
+  end
 
   def create
     @donation = Donation.find(params[:donation_id])
@@ -17,13 +19,13 @@ class ReservationsController < ApplicationController
     @reservation.status = "Reserved"
 
     if @reservation.save
-      redirect_to donation_path(:donation_id)
+      redirect_to donation_path(@donation)
     else
       render :new
     end
     authorize @reservation
   end
-  
+
   def show
   	@donation = Donation.find(params[:donation_id])
   	@reservation = Reservation.find(params[:id])

@@ -53,6 +53,7 @@ class DonationsController < ApplicationController
   end
 
   def update
+    @donation = Donation.find(params[:id])
     if @donation.update(donation_params)
       redirect_to @donation, notice: "Donation was succesfully updated."
     else
@@ -68,7 +69,7 @@ class DonationsController < ApplicationController
   private
 
   def set_donation
-    @donation = Donation.find(params[:donation_id])
+    @donation = Donation.find(params[:id])
     authorize @donation
   end
 
