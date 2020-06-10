@@ -1,13 +1,41 @@
-<div class="container">
+<div class="container-home">
   <div class="banner">
     <%= image_tag "home_banner_main.jpg", alt: "Image landing page" %>
   </div>
   <div class="home-searchform">
-    <%= simple_form_for :search, url: donations_path, method: 'GET', class: 'from-inline' do |f| %>
-      <%= f.input :category, prompt: 'choose a category', label:false, class: 'from-inline', collection: Category.all %>
-      <%= f.input :category, prompt: 'max. distance of donation', label:false, collection: Category.all %>
-      <%= f.submit 'SEARCH', class: 'button-filled-search' %>
+    <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
+      <%= label_tag :query do %>
+        <h2><%= "Find resources near you"%></h2>
+      <%end%>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-inline",
+      placeholder: "What are you looking for?"
+      %>
+      <%= text_field_tag :address,
+      params[:address],
+      class: "form-inline",
+      placeholder: "Find by proximate location"
+      %>
+      <%= submit_tag "SEARCH", class: "button-filled-search" %>
     <% end %>
+  </div>
+  <br>
+   <br>
+  <div class="home-searchform">
+    <%= form_tag donations_path, method: 'GET', html: { class: 'form-inline' } do %>
+      <%= label_tag :categories do %>
+        <h2><%= "Want to search by categories?"%></h2>
+      <%end%>
+      <%= select_tag :categories, options_from_collection_for_select(@categories, "id", "name")%>
+      <%#= text_field_tag :categories,
+      params[:categories],
+      class: "form-inline",
+      placeholder: "Find by categories"
+      %>
+      <%= submit_tag "SEARCH", class: "button-filled-search" %>
+    <% end %>
+
   </div>
   <div class="card-home">
     <h2>Help homeless in you <br>neighbourhood</h2>
@@ -30,6 +58,8 @@
           eirmod tempor invidunt ut labore et dolore
           magna aliquyam erat, sed diam voluptua.
         </p>
+    </div>
+
     </div>
     <div id="homepage-btn">
       <%= link_to "STORIES", new_donation_path, class: "button-filled-stories" %>

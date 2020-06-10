@@ -37,3 +37,15 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import { klickBurgerMenu } from '../components/navbar';
+import { flexCardGrow } from '../components/flexcard';
+import { mapToggle } from '../components/map_toggle';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+   klickBurgerMenu();
+   flexCardGrow();
+   mapToggle();
+});
+

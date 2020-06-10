@@ -1,6 +1,8 @@
+/** default navbar by le wagon **/
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: none;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +11,168 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+/** new styling navbar **/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+body,
+html {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  width: 375px;
+}
+
+.container-nav {
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+}
+
+.navbar-brand {
+    padding-top: 24px;
+    padding-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 8px;
+    line-height: inherit;
+    white-space: nowrap;
+    z-index: 101;
+}
+
+.navbar-brand h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar h1 {
+  z-index: 101;
+}
+
+.white-navbar {
+  h1 {
+    color: white;
+  }
+  .bar {
+    background-color: white;
+  }
+}
+
+/** styling for the hamburger menu **/
+
+.toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  /*horizontal centering: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/ */
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 9px 5px;
+  margin: 8px 0px 8px 0;
+  height: 20px;
+  width: 13%;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.bar {
+  background-color: black;
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+.bar + .bar {
+  margin-top: 5px;
+}
+
+.bottom {
+  top: 30px;
+  width: 70%;
+}
+
+.toggle-active {
+  position: fixed;
+}
+
+.toggle-button:hover {
+  opacity: .7;
+}
+
+.toggle-active .bar {
+  background-color: black;
+}
+
+.toggle-active .top {
+  -webkit-transform: translateY(0px) translateX(0) rotate(45deg);
+  width: 70%;
+}
+
+.toggle-active .bottom {
+  -webkit-transform: translateY(-10px) translateX(0) rotate(-45deg);
+  width: 70%;
+}
+
+.prevent-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/** styling for the overlay. The sliding-down effect of the overlay is given by the initial zero height and the onclick 100% height. **/
+
+.overlay {
+  position: sticky;
+  background-color: #F6D365;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .35s, visibility .35s, height .35s;
+}
+
+
+/* class added to the overlay on click*/
+
+.nav-active {
+  opacity: 1;
+  visibility: visible;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+}
+
+.overlay ul {
+  display: block;
+  position: relative;
+  top: 150px;
+  left: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+.overlay ul li {
+  display: block;
+  line-height: 60px;
+
+}
+
+.overlay ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.hidden {
+  opacity: 0;
 }
