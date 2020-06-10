@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 body { font-family: 'Roboto', sans-serif;
      background-color: #F4F4F4;
+
 }
 
 .map {
@@ -56,9 +57,7 @@ body { font-family: 'Roboto', sans-serif;
 
 /* overwriting bootstrap from defaults */
 
-.home-searchform {
-  width: 95%;
-}
+
 
 .form-group {
   width: 100%;
@@ -67,9 +66,27 @@ body { font-family: 'Roboto', sans-serif;
   margin-bottom: 0px;
 }
 
-.from-inline {
-  font-size: 5px;
-  font-color: white;
+.home-searchform {
+  margin-top: -100px;
+  position: relative;
+
+  .form-inline {
+    font-size: 12px;
+    font-color: white;
+    padding: 15px;
+    padding-left: 20px;
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 13px;
+    border-radius: 9px;
+    background-color: #f1f1f1;
+    border: none;
+
+      &:focus {
+        outline: none;
+        }
+    }
 }
 
 .form-control {
@@ -80,11 +97,6 @@ body { font-family: 'Roboto', sans-serif;
   height: 50px;
   background-color: #DBDBDB;
   padding: 10px;
-}
-
-.form-control:focus {
-  border-color: none;
-  box-shadow: none;
 }
 
 #homepage-btn {
@@ -103,6 +115,7 @@ body { font-family: 'Roboto', sans-serif;
   text-align: center;
   margin-left: 5%;
   margin-bottom: 20px;
+  border: none;
 }
 
 .button-filled-add {

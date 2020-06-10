@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   before_action :set_white_navbar, only: [:index]
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
-    @donations = policy_scope(Donation).all 
+    @donations = policy_scope(Donation).all
     if params[:categories].present?
       @donations = @donations.joins(:categories).where("categories.id =?", "#{params[:categories]}")
     end
@@ -26,7 +26,7 @@ class DonationsController < ApplicationController
         lat: donation.latitude,
         lng: donation.longitude
       }
-    end 
+    end
   end
 
   def create

@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+@import "new";
 
 .container {
   width: 375px;
@@ -8,6 +9,7 @@
   padding: 0px;
   background-color: #E3E5E3;
   color: #fcfcfc;
+  height: 100vh;
 }
 
 li {
