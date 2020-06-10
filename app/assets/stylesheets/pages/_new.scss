@@ -1,0 +1,50 @@
+// Import page-specific CSS files here.
+
+
+
+
+/* overwriting bootstrap from defaults */
+
+.home-searchform {
+  width: 95%;
+}
+
+.form-group {
+  width: 100%;
+  font-size: 13px;
+  padding-left: 18px;
+  margin-bottom: 0px;
+}
+
+.from-inline {
+  font-size: 5px;
+  font-color: white;
+}
+
+.form-control {
+  margin-top: 0px;
+  margin-bottom: 11px;
+  border-radius: 10px;
+  border-style: none;
+  height: 50px;
+  background-color: #DBDBDB;
+  padding: 10px;
+}
+
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+.button-filled-search {
+  padding: 16px 9px 16px 9px;
+  color: #23262B;
+  font-weight: bold;
+  background-color: #F6D365;
+  font-size: 12px;
+  border-radius: 7px;
+  width: 33%;
+  text-align: center;
+  margin-left: 5%;
+  margin-bottom: 10px;
+}
