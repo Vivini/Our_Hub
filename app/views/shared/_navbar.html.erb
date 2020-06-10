@@ -13,14 +13,25 @@
     <!-- markup for the overlay -->
     <nav class="overlay" id="overlay">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Your Profile</a></li>
+        <li><%= link_to 'Home', root_path %></li>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to 'Your Profile', user_path(current_user) %>
+          <% end %>
+          </li>
         <li><a href="#">Stories</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#">Log Out</a></li>
+        <li>
+          <% if user_signed_in? %>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <% end %>
+          </li>
+        <li>
+          <% if user_signed_in? == false %>
+          <%= link_to 'Login', new_user_session_path %>
+            <% end %>
+          </li>
       </ul>
     </nav>
   </div>
 </div>
-
-
