@@ -9,7 +9,8 @@
   padding: 0px;
   background-color: #E3E5E3;
   color: #fcfcfc;
-  height: 100vh;
+  height: 100%;
+  position: relative;
 }
 
 li {
@@ -40,9 +41,9 @@ li {
 
 .button-filled.toggle {
   border-style: none;
-  position: absolute;
+  position: inherit;
   z-index: 99;
-  top: 12.5%;
+  top: 150px;
   left: 7%;
 }
 
@@ -80,7 +81,8 @@ li {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  padding-top: 45%;
+  padding-top: 43%;
+  padding-bottom: 30px;
   z-index: 98;
 }
 
@@ -92,14 +94,16 @@ li {
   position: relative;
   margin-bottom: 12px;
   transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-  background-color: #F4F2F2;
-  box-shadow: 4px 7px 8px rgba(196, 196, 196, 0.3);
+  background-color: #f7f7f7;
+  box-shadow: 0px 10px 15px rgba(39, 39, 39, 0.1);
+  z-index: 0;
 
   span {
-    color: #222222;
+    color: #313131;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
     text-align: left;
+    max-width: 80%;
   }
 
   .list-item-trigger {
@@ -108,7 +112,8 @@ li {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0px 16px;
+    padding: 16px;
+    padding-left: 25px;
   }
 
   .list-item-pic {
@@ -116,7 +121,7 @@ li {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    z-index: 100;
   }
 
   .list-item-link {
@@ -127,7 +132,7 @@ li {
     padding: 16px;
     width: 100%;
     left: 0px;
-    z-index: 2;
+    z-index: 100;
   }
 }
 
@@ -151,9 +156,27 @@ li {
     display: block;
   }
 
-  .fas.fa-circle {
-    color: #F6D365;
-    font-size: 30px;
+  .icon {
+    background-color: #F6D365;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .fas.fa-plus {
+    color: #222222;
+    font-size: 21px;
+  }
+}
+
+#index-footer-decoration img {
+    width: 50%;
+    position: absolute;
+    z-index: 0;
+    right: 0%;
+    bottom: 0%
 }
 
