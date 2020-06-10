@@ -1,23 +1,27 @@
-<div class="container">
-  <div>
-    <h2><%= @donation.name %></h2>
+<div class="container show">
+  <div class="show-image">
+    <%= cl_image_tag @donation.photo.key, id:"show-banner" %>
   </div>
   <div>
-    <%= cl_image_tag @donation.photo.key, class: "list-item-pic"%>
+    <%= image_tag "show_background_element_left.png", id: "show-decoration-left", alt: "decoration element yellow" %>
   </div>
-  <div>
-    <p><%= @donation.description %></p>
-    <p>Where? <br><%= @donation.address %></p>
-    <% if @donation.user.private == true %>
-       <div><p>When? <br><%= @donation.timeframe %>, <%= @donation.updated_at.strftime("%A %e %B %Y") %></p></div>
-      <% else %>
-       <div><p>When? <br><%= @donation.timeframe %></p></div>
-    <% end %>
-    <p>Offered by: <br><%= @donation.user.user_name.split.map(&:capitalize).join(' ') %></p>
+  <div class="show-details">
+    <div id="info-name">
+      <h1><%= @donation.name %></h1>
+      <h3>Donator:<br>Organization</h3>
+    </div>
+    <div id="info-description">
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+        sed diam nonumy eirmod tempor invidunt ut labore et dolore
+        magna aliquyam erat, sed diam voluptua.
+      </p>
+    </div>
+    <div id="show-buttons">
+      <button class="button-filled black">ADD TO LIST</button>
+      <button class="button-filled outline">MY RESERVATIONS</button>
+    </div>
+    <div>
+      <%= image_tag "show_background_element_footer.png", id: "show-decoration-footer", alt: "decoration element black" %>
+    </div>
   </div>
-  <div></div>
 </div>
-
-
-
-
