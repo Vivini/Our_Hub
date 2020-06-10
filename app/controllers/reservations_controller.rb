@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @donation = Donation.find(params[:donation_id])
     @donation = Donation.new
     authorize @reservation
   end 
