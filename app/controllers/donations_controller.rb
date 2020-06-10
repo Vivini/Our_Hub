@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   before_action :set_white_navbar, only: [:index]
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
-    @donations = policy_scope(Donation).all 
+    @donations = policy_scope(Donation).all
     if params[:categories].present?
       @donations = @donations.joins(:categories).where("categories.id =?", "#{params[:categories]}")
     end
@@ -19,6 +19,7 @@ class DonationsController < ApplicationController
       "
       @donations = @donations.joins(:categories).where(sql_query, query: "%#{params[:query]}%")
     end
+    # while there is no reservation, donation is displayed.
     #@donations = policy_scope(Donation)
     #@donations = Donation.geocoded # returns donations with coordinates
     @markers = @donations.geocoded.map do |donation|
