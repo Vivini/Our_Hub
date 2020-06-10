@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
 
   def new
     @donation = Donation.new
+    @reservation = Reservation
     authorize @reservation
   end 
 
