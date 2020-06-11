@@ -1,7 +1,7 @@
 <% content_for :meta_title, "#{@user.user_name.capitalize!}'s profile on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_image, cl_image_path(@user.photo.key) %>
 <div class="container">
-  <h2>Welcome, <%= @user.user_name.capitalize! %>!</h2>
+  <h2>Welcome, <%= @user.user_name.capitalize %>!</h2>
   <h3>Your current donations:</h3>
   <ul>
       <% @user.donations.each do |donation|%>
