@@ -1,1 +1,203 @@
-_user_dashboard.scss
+
+.container {
+  width: 375px;
+  margin: auto;
+  padding: 0px;
+  background-color: #E3E5E3;
+  color: #fcfcfc;
+  height: 100%;
+  position: relative;
+  height: 100vh;
+}
+
+li {
+  list-style-type: none;
+}
+
+.header-decoration img {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  top: -3%;
+}
+
+.button-filled {
+  padding: 14px 8px 14px 8px;
+  color: #23262B;
+  font-weight: bold;
+  background-color: #F6D365;
+  font-size: 12px;
+  border-radius: 7px;
+  width: 37%;
+  text-align: center;
+}
+
+.button-filled:focus {
+  outline: none;
+}
+
+.button-filled.toggle {
+  border-style: none;
+  position: inherit;
+  z-index: 99;
+  top: 150px;
+  left: 7%;
+}
+
+.home-searchform-filter {
+  margin-top: 28%;
+  right: 7%;
+  position: absolute;
+
+  select {
+    font-size: 12px;
+    font-color: white;
+    padding: 15px 15px 15px 20px;
+    height: 46px;
+    width: 175px;
+    margin-bottom: 13px;
+    border-radius: 9px;
+    background-color: #f1f1f1;
+    border: none;
+
+      &:focus {
+        outline: none;
+        }
+    }
+}
+
+/* Flex Cards */
+
+.list-user {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 65%;
+  padding-bottom: 10px;
+  z-index: 98;
+  width: 100%;
+
+    ul {
+      padding-left: 3%;
+    }
+}
+
+.list-item-user {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
+  width: 320px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 10px 15px rgba(39, 39, 39, 0.1);
+  z-index: 0;
+  height: 55px;
+
+    .list-item-link {
+      font-family: 'Roboto', sans-serif;
+      color: #222222;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .icons-user {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-right: 20px;
+      width: 67px;
+      justify-content: space-between;
+    }
+
+    .fa-trash-alt {
+      color: black;
+      font-size: 19px;
+    }
+
+    .fa-edit {
+      color: black;
+      font-size: 19px;
+    }
+
+    .yellow {
+      background-color: #F6D365 !important;
+    }
+
+    .fa-bell {
+      color: black;
+      font-size: 19px;
+    }
+}
+
+  /*.list-item-pic {
+    display: none;
+    width: 100%;
+    height: 55px;
+    object-fit: cover;
+    z-index: 100;
+    border-radius: 10px;
+  }*/
+
+  .list-item-link {
+    width: 60%;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+
+  .list-item-pic {
+    display: block;
+  }
+
+  .icon {
+    background-color: #F6D365;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.user-add {
+  position: absolute;
+  top: 100px;
+  left: -25px;
+  width: 33%;
+
+    a {
+      box-shadow: 0px 10px 15px rgba(39, 39, 39, 0.1);
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+}
+
+#dashboard-headline {
+  position: absolute;
+  top: 175px;
+  padding-top: 10px;
+  left: 8%;
+
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      color: #222222;
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 25px;
+    }
+}
+
+#dashboard-headline-reservations {
+  padding-top: 5px;
+
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      color: #222222;
+      font-size: 23px;
+      font-weight: 600;
+      margin-left: 9%;
+    }
+}
+
