@@ -70,6 +70,108 @@
   position: relative;
 }
 
+/* photo upload */
+
+.upload-wrapper {
+  display: flex;
+  position: relative;
+  width: 95%;
+  z-index: 105;
+
+  .action {
+    display: flex;
+    position: relative;
+  }
+
+  .form-group label {
+    display: block;
+  }
+
+  .preview {
+    position: relative;
+  }
+
+  .preview-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+
+    .preview-cover {
+      position: relative;
+      width: 170px;
+      height: 60px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #ececec;
+      border-radius: 10px;
+      height: 50px;
+      margin-left: 20%;
+      box-shadow: 2px 7px 15px rgba(39, 39, 39, 0.1);
+    }
+  }
+
+  .upload-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    top: 0;
+    margin-left: 13%;
+    height: 60px;
+    background-color: #ececec;
+    box-shadow: 2px 7px 15px rgba(39, 39, 39, 0.1);
+    border-radius: 10px;
+    height: 50px;
+
+      i {
+        color: #969696;
+        font-size: 30px;
+      }
+  }
+
+  .upload-button.hovered {
+    background-color: green;
+  }
+
+  p.help-block {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    margin: 0;
+  }
+
+  input[type=file] {
+    position: absolute;
+    width: 220px;
+    height: 60px;
+    top: 0;
+    left: 60px;
+    opacity: 0;
+    z-index: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.validate {
+  font-size:13px;
+  color: white;
+  background: var(--green);
+
+  &:before {
+    opacity: 0;
+    transform: translate(0,0);
+  }
+
+  &:after {
+    content:"loading..." !important;
+  }
+}
+
 /* decoration elements */
 
 #new-header-decoration img {
