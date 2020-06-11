@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+  skip_before_action :authenticate_user!
   def index
     @reservations = policy_scope(Reservation).where(visit: @visit)
   end
@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
     @reservation.status = "Reserved"
 
     if @reservation.save
-      redirect_to donation_path(@donation)
+      redirect_to donation_reservations_path(@donation)
     else
       render :new
     end
