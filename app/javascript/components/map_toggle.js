@@ -6,10 +6,10 @@ const mapToggle = () => {
     viewmap.classList.toggle("toggle-hidden")
     viewlist.classList.toggle("toggle-hidden")
     if (viewmap.classList.contains("toggle-hidden")) {
-      element.innerText = "DISPLAY MAP";
+      element.innerText = "SHOW MAP";
     }
     if (viewlist.classList.contains("toggle-hidden")) {
-      element.innerText = "DISPLAY LIST";
+      element.innerText = "SHOW LIST";
     }
   });
 }
