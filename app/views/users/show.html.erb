@@ -1,20 +1,41 @@
 <% content_for :meta_title, "#{@user.user_name.capitalize!}'s profile on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_image, cl_image_path(@user.photo.key) %>
 <div class="container">
-  <h2>Welcome, <%= @user.user_name.capitalize %>!</h2>
-  <h3>Your current donations:</h3>
-  <ul>
-      <% @user.donations.each do |donation|%>
-        <div class="donationd">
-          <li><%= link_to donation.name, donation_path(donation) %></li>
-          <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
-          <li><%=link_to "edit", edit_donation_path(donation) %></li>
-          <li><%=link_to "delete", donation_path(donation), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        <% end %>
+  <div class="header-decoration">
+    <%= image_tag "dashboard_background_element.png", alt: "decoration element black form" %>
+  </div>
+  <div class="user-add" id="homepage-btn">
+    <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
+  </div>
+  <div id="dashboard-headline">
+    <h2>Your active donations</h2>
+  </div>
+  <div class="list-user">
+    <ul>
+      <% @user.donations.each do |donation| %>
+        <div class="list-item-user">
+          <li><%= link_to donation.name, donation_path(donation), class: "list-item-link" %></li>
+          <div class="icons-user">
+            <li><%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_donation_path(donation), class: "list-item-edit" %></li>
+            <li><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, donation_path(donation), class: "list-item-delete", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </div>
+          <% end %>
         </div>
     </ul>
-
-  <div id="homepage-btn">
-        <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
+  </div>
+  <div id="dashboard-headline-reservations">
+    <h2>Reserved items</h2>
+  </div>
+  <div class="list-user">
+    <ul>
+      <% @visit.reservations.each do |reservation| %>
+        <div class="list-item-user yellow">
+          <li><%= link_to donation.name, donation_path(donation), class: "list-item-link" %></li>
+            <div class="icons-user">
+              <li><i class="far fa-bell list-item-edit"></i></li>
+            </div>
+          <% end %>
+        </div>
+    </ul>
   </div>
 </div>
