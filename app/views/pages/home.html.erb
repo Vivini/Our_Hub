@@ -9,12 +9,14 @@
       <%= text_field_tag :query,
       params[:query],
       class: "form-inline",
-      placeholder: "What are you looking for?"
+      placeholder: "What are you looking for?",
+      required: true
       %>
       <%= text_field_tag :address,
       params[:address],
       class: "form-inline",
-      placeholder: "Approximate location"
+      placeholder: "Approximate location",
+      required: true
       %>
       <%= submit_tag "SEARCH", class: "button-filled-search" %>
       <%= submit_tag "SHOW ALL", class: "button-filled-list-all" %>
