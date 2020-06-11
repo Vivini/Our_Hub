@@ -27,7 +27,7 @@ class DonationsController < ApplicationController
         lat: donation.latitude,
         lng: donation.longitude
       }
-    end 
+    end
   end
 
   def create
