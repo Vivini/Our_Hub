@@ -41,16 +41,11 @@ document.addEventListener('turbolinks:load', () => {
 import { klickBurgerMenu } from '../components/navbar';
 import { flexCardGrow } from '../components/flexcard';
 import { mapToggle } from '../components/map_toggle';
-import { hoverUploadButton, animateUploadButton, initFilePreview } from '../components/photo_upload_button';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
    klickBurgerMenu();
    flexCardGrow();
    mapToggle();
-
-   hoverUploadButton();
-   animateUploadButton();
-   initFilePreview();
 });
 
