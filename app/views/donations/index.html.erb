@@ -8,20 +8,21 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-
   <div class="list">
     <% @donations.each do |donation| %>
       <div class= "list-item">
         <span class="list-item-trigger"><%= donation.name %></span>
-        <%= cl_image_tag donation.photo.key, class: "list-item-pic"%>
+        <%= cl_image_tag donation.photo.key, class: "list-item-pic" %>
         <%= link_to donation_path(donation), class: "list-item-link" do %>
           <span><%= donation.name %></span>
           <div class="icon">
-            <i class="fas fa-circle"></i>
+            <i class="fas fa-plus"></i>
           </div>
         <% end %>
-    </div>
+      </div>
     <% end %>
+  </div>
+  <div id="index-footer-decoration">
+    <%= image_tag "index_footer_element.png", alt: "Footer element index page" %>
   </div>
 </div>

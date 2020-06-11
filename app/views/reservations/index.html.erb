@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container">
   <h2>Your reserved resources</h2>
 
 <% if @visit.reservations[0].nil? %>
@@ -8,22 +8,19 @@
 
 <% else %>
   <% @visit.reservations.each do |reservation| %>
-    <div class="bg-light rounded w-100 d-flex p-3" style="background-color: rgba(245, 245, 245, 0.5); margin: 50px auto auto auto">
+    <div class="reservations-list">
       <%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center"%>
-        <div class="donationd-body">
-          <ul style="list-style: none">
+        <div class="reserved-item">
+          <ul>
           <li><strong>Resource: </strong><%= reservation.donation.name %></li>
           <br>
           <li><strong>Location: </strong><%= reservation.donation.address %></li>
           <br>
           <li><strong>Details: </strong><%= reservation.donation.timeframe %></li>
           <br>
-          <li><strong>Offered by :</strong> <%= reservation.donation.user.user_name %> </li>
+          <li><strong>Offered by :</strong><%= reservation.donation.user.user_name %></li>
         </div>
       <div class="row">
-      <div class="row">
-        <%= link_to "", reservation_path(reservation), method: :delete, class: "fas fa-ban donationd-remove-link col-1" %>
-      </div>
     </div>
     <% end %>
 <% end %>
