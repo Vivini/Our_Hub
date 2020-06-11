@@ -8,9 +8,8 @@ Rails.application.configure do
   config.active_job.queue_adapter     = :sidekiq
   # Do not eager load code on boot.
   config.eager_load = false
-
   # Show full error reports.
-  config.consider_all_requests_local = false
+  config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -62,4 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_job.queue_adapter     = :inline
+  config.hosts << /[a-z0-9]+\.ngrok\.io/
 end
