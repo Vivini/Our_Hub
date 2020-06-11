@@ -11,6 +11,7 @@
   color: #fcfcfc;
   height: 100%;
   position: relative;
+  height: 100vh;
 }
 
 li {
@@ -45,6 +46,28 @@ li {
   z-index: 99;
   top: 150px;
   left: 7%;
+}
+
+.home-searchform-filter {
+  margin-top: 28%;
+  right: 7%;
+  position: absolute;
+
+  select {
+    font-size: 12px;
+    font-color: white;
+    padding: 15px 15px 15px 20px;
+    height: 46px;
+    width: 175px;
+    margin-bottom: 13px;
+    border-radius: 9px;
+    background-color: #f1f1f1;
+    border: none;
+
+      &:focus {
+        outline: none;
+        }
+    }
 }
 
 /* Mapbox position */
