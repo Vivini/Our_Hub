@@ -10,7 +10,7 @@
         <% end %>
       </div>
       <div class="map toggle-hidden" id="map"
-        style="width: 90%; height: 100vh; align-items: center;"
+        style="width: 100vw; height: 100vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -32,3 +32,4 @@
     <%= image_tag "index_footer_element.png", alt: "Footer element index page" %>
   </div>
 </div>
+
