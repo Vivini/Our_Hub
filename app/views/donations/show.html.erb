@@ -24,8 +24,8 @@
       </p>
     </div>
     <div id="show-buttons">
-      <%= link_to 'Reserve', donation_reservations_path(@donation), action: :create, method: :post %>
-      <%= link_to 'Back to results', donations_path %>
+      <%= link_to 'RESERVE', donation_reservations_path(@donation), class: "button-filled black", action: :create, method: :post %>
+      <%= link_to 'BACK TO RESULTS', donations_path, class: "button-filled outline" %>
     </div>
     <div>
       <%= image_tag "show_background_element_footer.png", id: "show-decoration-footer", alt: "decoration element black" %>

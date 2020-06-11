@@ -32,12 +32,13 @@
   width: 92%;
   box-shadow: 4px 7px 8px rgba(196, 196, 196, 0.3);
   background-color: #FAFAFA;
+  padding-bottom: 90px;
 
   #info-name {
     display: flex;
     justify-content: space-between;
     margin-left: 8%;
-    padding-top: 35px;
+    padding-top: 30px;
 
      h1 {
       font-family: 'Roboto', sans-serif;
@@ -70,22 +71,32 @@
 
   #show-buttons {
     margin-left: 8%;
+    padding-top: 5%;
 
     .black {
-      background-color: #222222 !important;
+      background-color: #222222;
+      padding: 18px 30px 18px 30px !important;
       color: #F4F4F4;
       border: none;
       font-size: 10px;
+      padding: 16px;
+      font-size: 11px;
+      letter-spacing: 0.4px !important;
+      border: solid 0px;
+      border-color: #222222;
     }
 
     .outline {
       background-color: #FAFAFA;
+      border: solid 2px;
       border-color: #222222;
       width: 42% !important;
       font-size: 10px;
-      padding: 13px 9px 13px 9px !important;
+      padding: 15px 18px 15px 18px !important;
       margin-left: 11px;
       margin-bottom: 120px;
+      font-size: 11px;
+      letter-spacing: 0.2px;
     }
   }
 }
