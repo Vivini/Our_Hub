@@ -20,6 +20,7 @@ class DonationsController < ApplicationController
       "
       @donations = @donations.joins(:categories).where(sql_query, query: "%#{params[:query]}%")
     end
+    # while there is no reservation, donation is displayed.
     #@donations = policy_scope(Donation)
     #@donations = Donation.geocoded # returns donations with coordinates
     @markers = @donations.geocoded.map do |donation|
