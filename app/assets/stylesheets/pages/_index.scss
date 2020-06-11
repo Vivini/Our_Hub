@@ -159,6 +159,23 @@ li {
   }
 }
 
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.list-card {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+  background-color: #E5E5E4;
+}
+
 .list-item.expanded {
   height: 245px;
 
