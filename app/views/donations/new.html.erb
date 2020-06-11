@@ -3,13 +3,13 @@
   <div id="new-header-decoration">
     <%= image_tag "new_header_element.png", alt: "Header element add donation page" %>
   </div>
-    <h2>Add your dontation</h2>
+    <h2>Add your donation</h2>
   <div class="new-searchform">
     <%= simple_form_for @donation, class: 'from-inline new' do |f| %>
-    <%= f.input :name,  placeholder: 'name the article',label:false, class: 'from-inline new' %>
+    <%= f.input :name,  placeholder: 'Name the item',label:false, class: 'from-inline new' %>
     <%= f.input :address, placeholder: "Where do you want to meet?", label:false %>
     <%= f.input :description, placeholder: "Describe the article", label:false %>
-    <%= f.input :timeframe, placeholder: "Details", label:false %>
+    <%= f.input :timeframe, placeholder: "What time? Any other details?", label:false %>
       <div class="upload-wrapper">
         <a class="upload-button" data-type-upload=""><i class="far fa-image"></i></a>
             <div class="form-group file optional">

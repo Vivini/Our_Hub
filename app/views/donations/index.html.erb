@@ -3,7 +3,12 @@
   <div class="header-decoration">
     <%= image_tag "index_background_element.png", alt: "decoration element black form" %>
   </div>
-    <button class="map-btn button-filled toggle">DISPLAY MAP</button>
+    <button class="map-btn button-filled toggle">SHOW MAP</button>
+      <div class="home-searchform-filter">
+        <%= form_with(url: donations_path, method: "get", html: { class: "form-inline"}) do |f| %>
+        <%= f.collection_select(:categories, @categories, :id, :name, {}, { onchange: "this.form.submit()" }) %>
+        <% end %>
+  </div>
   <div class="map toggle-hidden" id="map"
     style="width: 90%; height: 600px; align-items: center;"
     data-markers="<%= @markers.to_json %>"
