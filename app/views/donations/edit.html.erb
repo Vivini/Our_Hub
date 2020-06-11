@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Update #{@donation.name} on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @donation.description %>
+<% content_for :meta_image, cl_image_path(@donation.photo.key) %>
 <div class="container">
       <div class="card-home">
         <div class="form_group">

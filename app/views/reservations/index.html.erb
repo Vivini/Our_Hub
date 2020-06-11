@@ -1,3 +1,4 @@
+<% content_for :meta_title, "Your reservations on #{DEFAULT_META["meta_product_name"]}" %>
 <div class="container">
   <h2>Your reserved resources</h2>
 
@@ -18,7 +19,7 @@
           <br>
           <li><strong>Details: </strong><%= reservation.donation.timeframe %></li>
           <br>
-          <li><strong>Offered by :</strong><%= reservation.donation.user.user_name %></li>
+          <li><strong>Offered by:</strong><%= reservation.donation.user.user_name %></li>
         </div>
       <div class="row">
     </div>
