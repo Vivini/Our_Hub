@@ -21,6 +21,12 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
+onMapLoaded(event) {
+
+    event.map.resize();
+
+}
+
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));

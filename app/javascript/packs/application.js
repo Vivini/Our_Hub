@@ -30,6 +30,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 

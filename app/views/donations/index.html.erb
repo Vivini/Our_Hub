@@ -8,18 +8,18 @@
         <%= form_with(url: donations_path, method: "get", html: { class: "form-inline"}) do |f| %>
         <%= f.collection_select(:categories, @categories, :id, :name, {}, { onchange: "this.form.submit()" }) %>
         <% end %>
-  </div>
-  <div class="map toggle-hidden" id="map"
-    style="width: 90%; height: 600px; align-items: center;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <div class="list">
-    <% @donations.each do |donation| %>
-      <div class= "list-item">
-        <span class="list-item-trigger"><%= donation.name %></span>
-        <%= cl_image_tag donation.photo.key, class: "list-item-pic" %>
-        <%= link_to donation_path(donation), class: "list-item-link" do %>
+      </div>
+      <div class="map toggle-hidden" id="map"
+        style="width: 90%; height: 100vh; align-items: center;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <div class="list">
+        <% @donations.each do |donation| %>
+          <div class= "list-item">
+          <span class="list-item-trigger"><%= donation.name %></span>
+          <%= cl_image_tag donation.photo.key, class: "list-item-pic" %>
+          <%= link_to donation_path(donation), class: "list-item-link" do %>
           <span><%= donation.name %></span>
           <div class="icon">
             <i class="fas fa-plus"></i>

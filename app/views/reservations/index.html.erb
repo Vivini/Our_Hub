@@ -1,37 +1,40 @@
 <% content_for :meta_title, "Your reservations on #{DEFAULT_META["meta_product_name"]}" %>
-<div class="container">
-  <div class="header-decoration">
-    <%= image_tag "index_background_element.png", alt: "decoration element black form" %>
-  </div>
-  <h2>Your reserved resources</h2>
+  
+  <div class="res-container">
 
-<% if @visit.reservations[0].nil? %>
-  <div class="alert alert-warning">
-  <p>You have not reserved anything yet.</p>
-  </div>
-
-<% else %>
+    <div id="map" class="map"
+      style="width: 90%; height: 600px; align-items: center;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    <div class="res-container">
+    <h4>Your reserved resources</h4>
+    </div>
+  <% if @visit.reservations[0].nil? %>
+    <div class="alert alert-warning">
+      <p>You have not reserved anything yet.</p>
+    </div>
+  <% else %>
+  
   <% @visit.reservations.each do |reservation| %>
-    <div class="card">
-        <div class="card-product-infos">
-          <ul>
-            <div class="card-img">
-          <%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center"%> </div>
-          <div class="info">
-          <li><strong>Resource: </strong><%= reservation.donation.name %></li>
-          <br>
-          <li><strong>Location: </strong><%= reservation.donation.address %></li>
-          <br>
-          <li><strong>Details: </strong><%= reservation.donation.timeframe %></li>
-          <br>
-          <li><strong>Offered by:</strong><%= reservation.donation.user.user_name %></li>
-
-
-    <% end %>
-  <% end %>
+      <div class="res-image"><%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center", id: "show-banner" %></div>
+          
+      <div class="res-details">
+          <div id="res-info-description">
+            <strong>Resource: </strong><%= reservation.donation.name %>
           </div>
+          <div id="res-info-description">
+            <strong>Location: </strong><%= reservation.donation.address %>
+          </div>
+          <div id="res-info-description">
+            <strong>Details: </strong><%= reservation.donation.timeframe %>
+           </div>
+          <div id="res-info-description"> 
+            <strong>By: </strong><%= reservation.donation.user.user_name %>
+          </div>
+        </div>
+    <% end %>
+<% end %>
+        
 </div>
-  <div id="index-footer-decoration">
-    <%= image_tag "index_footer_element.png", alt: "Footer element index page" %>
-  </div>
-</div>
+
