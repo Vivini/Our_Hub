@@ -1,6 +1,6 @@
 class DonationsController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [ :show, :index ]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_white_navbar, only: [:index]
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
   def index
@@ -54,6 +54,7 @@ class DonationsController < ApplicationController
   end
 
   def update
+    @donation = Donation.find(params[:id])
     if @donation.update(donation_params)
       redirect_to @donation, notice: "Donation was succesfully updated."
     else

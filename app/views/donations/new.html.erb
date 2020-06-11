@@ -1,27 +1,18 @@
-  
-<div class="container">
-      <div class="card-home">
-        <div class="form_group">
-          <%= simple_form_for @donation do |f| %>
-
-          <%= f.input :name,  prompt: "Name" %>
-
-          <%= f.input :address, prompt: "Address" %>
-
-          <%= f.input :description, prompt: "Description" %>
-
-          <%= f.input :timeframe, prompt: "Details"%>
-
-          <%= f.input :photo, as: :file, input_html: { multiple: false } %>
-
-          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-
-          <%= f.button :submit, class: "btn-primary" %>
-
-          <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-
-          <% end %>
-          <br>
-        </div>
-      </div>
+<div class="container new">
+  <div id="new-header-decoration">
+    <%= image_tag "new_header_element.png", alt: "Header element add donation page" %>
+  </div>
+    <h2>Add your dontation</h2>
+  <div class="new-searchform">
+    <%= simple_form_for @donation, class: 'from-inline new' do |f| %>
+    <%= f.input :name,  placeholder: 'name the article',label:false, class: 'from-inline new' %>
+    <%= f.input :address, placeholder: "Where do you want to meet?", label:false %>
+    <%= f.input :description, placeholder: "Describe the article", label:false %>
+    <%= f.input :timeframe, placeholder: "Details", label:false %>
+    <%= f.button :submit, "ADD DONATION", class: "button-filled create" %>
+    <% end %>
+  </div>
+  <div id="new-footer-decoration">
+    <%= image_tag "new_footer_element.png", alt: "Footer element add donation page" %>
+  </div>
 </div>

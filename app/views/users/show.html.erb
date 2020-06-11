@@ -3,7 +3,7 @@
   <h3>Your current donations:</h3>
   <ul>
       <% @user.donations.each do |donation|%>
-        <div class="card">
+        <div class="donationd">
           <li><%= link_to donation.name, donation_path(donation) %></li>
           <li> <%= cl_image_tag donation.photo.key, width: 300, height: 200 %></li>
           <li><%=link_to "edit", edit_donation_path(donation) %></li>

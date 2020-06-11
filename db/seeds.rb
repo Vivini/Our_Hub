@@ -15,35 +15,35 @@ Donation.destroy_all
 User.destroy_all
 
 category1 = Category.create!({
-  name: "equipment"
+  name: "Equipment"
 })
 
 category2 = Category.create!({
-  name: "hygiene"
+  name: "Hygiene"
 })
 
 category3 = Category.create!({
-  name: "clothing"
+  name: "Clothing"
 })
 
 category4 = Category.create!({
-  name: "first aid"
+  name: "First aid"
 })
 
 category5 = Category.create!({
-  name: "food"
+  name: "Food"
 })
 
 category6 = Category.create!({
-  name: "consultation"
+  name: "Consultation"
 })
 
 category7 = Category.create!({
-  name: "shelter"
+  name: "Shelter"
 })
 
 category8 = Category.create!({
-  name: "other"
+  name: "Other"
 })
 
 user1 = User.create!({

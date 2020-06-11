@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Your reserved resources</h2>
+
+<% if @visit.reservations[0].nil? %>
+  <div class="alert alert-warning">
+  <p>You have not reserved anything yet.</p>
+  </div>
+
+<% else %>
+  <% @visit.reservations.each do |reservation| %>
+    <div class="reservations-list">
+      <%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center"%>
+        <div class="reserved-item">
+          <ul>
+          <li><strong>Resource: </strong><%= reservation.donation.name %></li>
+          <br>
+          <li><strong>Location: </strong><%= reservation.donation.address %></li>
+          <br>
+          <li><strong>Details: </strong><%= reservation.donation.timeframe %></li>
+          <br>
+          <li><strong>Offered by :</strong><%= reservation.donation.user.user_name %></li>
+        </div>
+      <div class="row">
+    </div>
+    <% end %>
+<% end %>
+</div>

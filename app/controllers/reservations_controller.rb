@@ -1,24 +1,32 @@
 class ReservationsController < ApplicationController
-
+  skip_before_action :authenticate_user!
   def index
-    @reservations = Reservation.all
+    @reservations = policy_scope(Reservation).where(visit: @visit)
   end
 
   def new
+
+    @donation = Donation.new
+    @reservation = Reservation.new
+    authorize @reservation
+
+  end
+
+  def create
     @donation = Donation.find(params[:donation_id])
     @reservation = Reservation.new
     @reservation.donation = @donation
     @reservation.visit = @visit
-    @reservation.status = "Pending"
+    @reservation.status = "Reserved"
 
     if @reservation.save
-      redirect_to donation_path(@donation)
+      redirect_to donation_reservations_path(@donation)
     else
       render :new
     end
     authorize @reservation
   end
-  
+
   def show
   	@donation = Donation.find(params[:donation_id])
   	@reservation = Reservation.find(params[:id])
@@ -28,21 +36,21 @@ class ReservationsController < ApplicationController
   def update
   	@donation = Donation.find(params[:donation_id])
   	@reservation = Reservation.find(params[:id])
-  	@reservation.status = "Pending"
+  	@reservation.status = "Reserved"
     @reservation.save!
-    redirect_to donation_reservation_path
+    # ?? Change to ""
+    redirect_to donation_path(@donation)
   end
 
   def destroy
-    @donation = Donation.find(params[:donation_id])
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to root_path
   end
 
-  private
+  #private
 
-  def reservation_params
-    params.require(:reservation).permit(:status)
-  end
+  # def reservation_params
+  #   params.require(:reservation).permit(:status)
+  # end
 end

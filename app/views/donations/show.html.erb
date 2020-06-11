@@ -1,5 +1,6 @@
 <div class="container show">
   <div class="show-image">
+
     <%= cl_image_tag @donation.photo.key, id:"show-banner" %>
   </div>
   <div>
@@ -17,8 +18,8 @@
       </p>
     </div>
     <div id="show-buttons">
-      <button class="button-filled black">ADD TO LIST</button>
-      <button class="button-filled outline">MY RESERVATIONS</button>
+      <%= link_to 'Reserve', donation_reservations_path(@donation), action: :create, method: :post %>
+      <%= link_to 'Back to results', donations_path %>
     </div>
     <div>
       <%= image_tag "show_background_element_footer.png", id: "show-decoration-footer", alt: "decoration element black" %>
