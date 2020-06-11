@@ -1,4 +1,4 @@
 meta_product_name: "Our Hub"
 meta_title: "Our Hub - give what you have, take what you need"
 meta_description: "Our Hub connects homeless people with donators and organisations in their local area."
-meta_image: "bnw.jpg" # should exist in `app/assets/images/`
+meta_image: "og_image.jpg" # should exist in `app/assets/images/`
