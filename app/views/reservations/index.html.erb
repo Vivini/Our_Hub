@@ -1,5 +1,8 @@
 <% content_for :meta_title, "Your reservations on #{DEFAULT_META["meta_product_name"]}" %>
 <div class="container">
+  <div class="header-decoration">
+    <%= image_tag "index_background_element.png", alt: "decoration element black form" %>
+  </div>
   <h2>Your reserved resources</h2>
 
 <% if @visit.reservations[0].nil? %>
@@ -10,9 +13,9 @@
 <% else %>
   <% @visit.reservations.each do |reservation| %>
     <div class="reservations-list">
-      <%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center"%>
-        <div class="reserved-item">
+        <div class="list-card">
           <ul>
+          <li><%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center"%></li>
           <li><strong>Resource: </strong><%= reservation.donation.name %></li>
           <br>
           <li><strong>Location: </strong><%= reservation.donation.address %></li>
@@ -21,8 +24,9 @@
           <br>
           <li><strong>Offered by:</strong><%= reservation.donation.user.user_name %></li>
         </div>
-      <div class="row">
-    </div>
     <% end %>
-<% end %>
+  <% end %>
+  <div id="index-footer-decoration">
+    <%= image_tag "index_footer_element.png", alt: "Footer element index page" %>
+  </div>
 </div>
