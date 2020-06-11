@@ -26,6 +26,7 @@ body { font-family: 'Roboto', sans-serif;
 
 .banner img {
   width: 100%;
+  margin-top: -10%;
 }
 
 .card-home {
@@ -69,6 +70,7 @@ body { font-family: 'Roboto', sans-serif;
 .home-searchform {
   margin-top: -100px;
   position: relative;
+  padding: 0px 2%;
 
   .form-inline {
     font-size: 12px;
@@ -78,7 +80,7 @@ body { font-family: 'Roboto', sans-serif;
     height: 50px;
     width: 90%;
     margin-left: 5%;
-    margin-bottom: 13px;
+    margin-bottom: 11px;
     border-radius: 9px;
     background-color: #f1f1f1;
     border: none;
@@ -111,9 +113,10 @@ body { font-family: 'Roboto', sans-serif;
   background-color: #F6D365;
   font-size: 12px;
   border-radius: 7px;
-  width: 30%;
+  width: 32%;
   text-align: center;
   margin-left: 5%;
+  margin-top: 2%;
   margin-bottom: 20px;
   border-style: solid;
   border-color: #F6D365;
@@ -152,7 +155,7 @@ body { font-family: 'Roboto', sans-serif;
   border-color: #F6D365;
   font-size: 12px;
   border-radius: 7px;
-  width: 33%;
+  width: 30%;
   text-align: center;
   margin-left: 3%;
   color: white;
