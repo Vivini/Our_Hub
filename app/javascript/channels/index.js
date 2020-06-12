@@ -3,3 +3,11 @@
 
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
+
+
+window.onresize = function(event)
+{
+   map.zoomOut(); map.zoomIn();
+}
+
+
