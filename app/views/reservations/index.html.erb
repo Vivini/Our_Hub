@@ -1,40 +1,44 @@
 <% content_for :meta_title, "Your reservations on #{DEFAULT_META["meta_product_name"]}" %>
-  
-  <div class="res-container">
 
+  <div class="res-container">
     <div id="map" class="map"
-      style="width: 90%; height: 600px; align-items: center;"
+      style="width: 90%; height: 300px; align-items: center;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
     <div class="res-container">
-    <h4>Your reserved resources</h4>
+      <button class="res-btn button-filled download">DOWNLOAD</button>
     </div>
-  <% if @visit.reservations[0].nil? %>
+
+  <div class="res-container">
+    <div class="res-list">
+
+    <% if @visit.reservations[0].nil? %>
     <div class="alert alert-warning">
       <p>You have not reserved anything yet.</p>
     </div>
   <% else %>
-  
   <% @visit.reservations.each do |reservation| %>
       <div class="res-image"><%= cl_image_tag reservation.donation.photo.key, height: 200, class: "align-self-center", id: "show-banner" %></div>
           
       <div class="res-details">
           <div id="res-info-description">
-            <strong>Resource: </strong><%= reservation.donation.name %>
+            <p><strong>Resource: </strong><%= reservation.donation.name %></p>
           </div>
           <div id="res-info-description">
-            <strong>Location: </strong><%= reservation.donation.address %>
+            <p><strong>Location: </strong><%= reservation.donation.address %></p>
           </div>
           <div id="res-info-description">
-            <strong>Details: </strong><%= reservation.donation.timeframe %>
+            <p><strong>Details: </strong><%= reservation.donation.timeframe %></p>
            </div>
           <div id="res-info-description"> 
-            <strong>By: </strong><%= reservation.donation.user.user_name %>
+            <p><strong>By: </strong><%= reservation.donation.user.user_name %></p>
           </div>
         </div>
     <% end %>
 <% end %>
-        
+</div>
+</div>
+</div>       
 </div>
 

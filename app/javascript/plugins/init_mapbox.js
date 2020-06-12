@@ -11,6 +11,7 @@ const buildMap = () => {
     center: [52.52, 13.41], // starting position Alexanderplatz
     zoom: 3,
   });
+  
 };
 
 const addMarkersToMap = (map, markers) => {
@@ -36,5 +37,6 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   }
 };
+
 
 export { initMapbox };
