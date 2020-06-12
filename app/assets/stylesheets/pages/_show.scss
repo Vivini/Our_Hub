@@ -1,6 +1,6 @@
 
 .container.show {
-  min-height: calc(100vh + 100px) !important;
+  min-height: calc(100vh + 80px) !important;
   background-color: #e3e5e3b8 !important;
   overflow: hidden;
 }
@@ -24,7 +24,7 @@
 #show-decoration-left {
   width: 23%;
   position: absolute;
-  top: 40%;
+  top: 37%;
 }
 
 .show-details {
@@ -33,7 +33,7 @@
   width: 92%;
   box-shadow: 4px 7px 8px rgba(196, 196, 196, 0.3);
   background-color: #FAFAFA;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
   margin-bottom: 100px;
   display: block;
 
@@ -57,7 +57,8 @@
       color: #000000;
       font-weight: bold;
       font-size: 10px;
-      padding-right: 53px;
+      padding-right: 20px;
+      padding-left: 20px;
     }
   }
 
@@ -74,7 +75,7 @@
 
   #show-buttons {
     margin-left: 8%;
-    padding-top: 5%;
+    padding-top: 10%;
 
     .black {
       background-color: #222222;
