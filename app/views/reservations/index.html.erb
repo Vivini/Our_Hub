@@ -1,14 +1,20 @@
 <% content_for :meta_title, "Your reservations on #{DEFAULT_META["meta_product_name"]}" %>
 
   <div class="res-container">
-    <div id="map" class="map"
+    <div id="map" class="map res"
       style="width: 90%; height: 300px; align-items: center;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
     </div>
     <div class="res-container">
-      <button class="res-btn button-filled download">DOWNLOAD</button>
+       <div id="map-dl-btn">
+        <%= link_to "DOWNLOAD", asset_path('Our Hub Resources.pdf'), :download => 'filename', class: "button-filled-add" %>
+      </div>
     </div>
+
+
 
   <div class="res-container">
     <div class="res-list">

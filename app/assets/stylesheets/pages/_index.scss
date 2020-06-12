@@ -78,7 +78,11 @@ li {
   display: flex;
   align-items: center;
   margin: auto;
-  top: 170px;
+  top: 200px;
+}
+
+.res {
+  top: 5%;
 }
 
 .mapboxgl-map {
@@ -252,12 +256,12 @@ li {
       font-size: 18px;
     }
 
-  #map {
+#map {
   text-align: center;
   display: flex;
   align-items: center;
   margin: auto;
-  top: 50px;
+  top: 150px;
     }
 }
 
@@ -358,7 +362,7 @@ li {
   }
 }
 
-.button-filled.download {
+#map-dl-btn {
   border-style: none;
   position: inherit;
   z-index: 99;
