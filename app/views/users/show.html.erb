@@ -26,16 +26,20 @@
   <div id="dashboard-headline-reservations">
     <h2>Reserved items</h2>
   </div>
-  <div class="list-user">
+    <div class="list-user-res">
     <ul>
-      <% @visit.reservations.each do |reservation| %>
-        <div class="list-item-user yellow">
-          <li><%= link_to donation.name, donation_path(donation), class: "list-item-link" %></li>
-            <div class="icons-user">
-              <li><i class="far fa-bell list-item-edit"></i></li>
-            </div>
-          <% end %>
+     
+        <div class="list-item-user-res">
+          <li class="list-item-link"> Men's Sweatshirt</li>
+        </div>
+        <div class="list-item-user-res">
+          <li class="list-item-link"> Waterproof Jacket</li>
+        </div>
+        <div class="list-item-user-res">
+          <li class="list-item-link"> First Aid Kit</li>
         </div>
     </ul>
   </div>
+
 </div>
+
