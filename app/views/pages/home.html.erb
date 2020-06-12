@@ -9,14 +9,12 @@
       <%= text_field_tag :query,
       params[:query],
       class: "form-inline",
-      placeholder: "What are you looking for?",
-      required: true
+      placeholder: "What are you looking for?"
       %>
       <%= text_field_tag :address,
       params[:address],
       class: "form-inline",
-      placeholder: "Approximate location",
-      required: true
+      placeholder: "Approximate location"
       %>
       <%= submit_tag "SEARCH", class: "button-filled-search" %>
       <%= submit_tag "SHOW ALL", class: "button-filled-list-all" %>
@@ -30,11 +28,6 @@
     </div>
     <div id="homepage-btn">
       <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
-    </div>
-    <div id="homepage-btn">
-      <% if current_user %>
-        <%= link_to "MY DONATIONS", user_path(current_user), class: "button-filled-add" %>
-      <% end %>
     </div>
     <div class="card-home">
       <h2>Among people.<br>Homeless people<br>and their stories</h2>
