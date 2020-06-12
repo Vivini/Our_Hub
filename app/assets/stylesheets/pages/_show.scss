@@ -1,7 +1,8 @@
 
 .container.show {
-  height: 100vh;
+  min-height: calc(100vh + 100px) !important;
   background-color: #e3e5e3b8 !important;
+  overflow: hidden;
 }
 
 .show-image {
@@ -33,6 +34,8 @@
   box-shadow: 4px 7px 8px rgba(196, 196, 196, 0.3);
   background-color: #FAFAFA;
   padding-bottom: 90px;
+  margin-bottom: 100px;
+  display: block;
 
   #info-name {
     display: flex;
