@@ -43,6 +43,18 @@
       padding-left: 16px;
       padding-top: 25px;
     }
+
+    input {
+      background-color: #ececec;
+      box-shadow: 2px 7px 15px rgba(39, 39, 39, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    input, button, select, optgroup, textarea {
+      color: #969696;
+      font-size: 12px;
+    }
 }
 
 .form-control {
@@ -187,3 +199,4 @@
   z-index: 0;
   bottom: 0%;
 }
+

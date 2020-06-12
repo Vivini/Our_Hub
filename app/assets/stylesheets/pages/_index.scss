@@ -125,10 +125,9 @@ li {
 .list {
   display: flex;
   flex-direction: column;
-  padding: 25px;
-  padding-top: 43%;
-  padding-bottom: 30px;
+  padding: 170px 25px 25px 25px;
   z-index: 98;
+  margin-bottom: 50px;
 }
 
 .list-item {
@@ -242,7 +241,11 @@ li {
     bottom: 0%
 }
 
-
+.container.index {
+  min-height: calc(100vh + 100px) !important;
+  overflow: hidden;
+  height: 100% !important;
+}
 
 .res-container {
   width: 375px;

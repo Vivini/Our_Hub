@@ -11,23 +11,21 @@
   <div class="show-details">
     <div id="info-name">
       <h1><%= @donation.name %></h1>
-      <h3>By:<br><%= @donation.user.user_name.split.map(&:capitalize).join(' ') %></h3>
+      <h3>Donated by:<br><%= @donation.user.user_name.split.map(&:capitalize).join(' ') %></h3>
     </div>
     <div id="info-description">
       <p><%= @donation.description %></p>
-      <p>This resource can be accessed at <%= @donation.address %>.</p>
+      <p>This resource can be accessed at: <%= @donation.address %>.</p>
       <% if @donation.user.private == true %>
-        <p>When? <br><%= @donation.timeframe %>, <%= @donation.updated_at.strftime("%A %e %B %Y") %></p>
+        <p>Appointment: <br><%= @donation.timeframe %>, <%= @donation.updated_at.strftime("%A %e %B %Y") %></p>
       <% else %>
-        <p>When? <%= @donation.timeframe %></p>
+        <p>Appointment: <%= @donation.timeframe %></p>
       <% end %>
       </p>
     </div>
     <div id="show-buttons">
       <%= link_to 'RESERVE', donation_reservations_path(@donation), class: "button-filled black", action: :create, method: :post %>
       <%= link_to 'BACK TO RESULTS', donations_path, class: "button-filled outline" %>
-    </div>
-    <div>
     </div>
   </div>
 </div>
