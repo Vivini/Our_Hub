@@ -9,8 +9,9 @@ const buildMap = () => {
     container: 'map',
     style: 'mapbox://styles/vivini/ckb686a1t3g6f1ionykd6v6gz',
     center: [52.52, 13.41], // starting position Alexanderplatz
-    zoom: 3
+    zoom: 3,
   });
+  
 };
 
 const addMarkersToMap = (map, markers) => {
@@ -27,6 +28,7 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
+
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
@@ -35,5 +37,6 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   }
 };
+
 
 export { initMapbox };

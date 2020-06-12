@@ -3,23 +3,24 @@
   <div class="header-decoration">
     <%= image_tag "index_background_element.png", alt: "decoration element black form" %>
   </div>
-  <button class="map-btn button-filled toggle">SHOW MAP</button>
-  <div class="home-searchform-filter">
-    <%= form_with(url: donations_path, method: "get", html: { class: "form-inline"}) do |f| %>
-      <%= f.collection_select(:categories, @categories, :id, :name, {}, { onchange: "this.form.submit()" }) %>
-    <% end %>
-  </div>
-  <div class="map toggle-hidden" id="map"
-    style="width: 90%; height: 600px; align-items: center;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <div class="list">
-    <% @donations.each do |donation| %>
-      <div class= "list-item">
-        <span class="list-item-trigger"><%= donation.name %></span>
-        <%= cl_image_tag donation.photo.key, class: "list-item-pic" %>
-        <%= link_to donation_path(donation), class: "list-item-link" do %>
+    <button class="map-btn button-filled toggle">SHOW MAP</button>
+      <div class="home-searchform-filter">
+        <%= form_with(url: donations_path, method: "get", html: { class: "form-inline"}) do |f| %>
+        <%= f.collection_select(:categories, @categories, :id, :name, {}, { onchange: "this.form.submit()" }) %>
+        <% end %>
+      </div>
+      <div class="map toggle-hidden" id="map"
+        style="width: 90vw; height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        <p style="text-align: justify; color: #3a3a3a"><strong>Important: </strong><br>Please make sure, the meeting is arranged in a public area.</p>
+      </div>
+      <div class="list">
+        <% @donations.each do |donation| %>
+          <div class= "list-item">
+          <span class="list-item-trigger"><%= donation.name %></span>
+          <%= cl_image_tag donation.photo.key, class: "list-item-pic" %>
+          <%= link_to donation_path(donation), class: "list-item-link" do %>
           <span><%= donation.name %></span>
           <div class="icon">
             <i class="fas fa-plus"></i>
@@ -32,3 +33,4 @@
     <%= image_tag "index_footer_element.png", alt: "Footer element index page" %>
   </div>
 </div>
+
