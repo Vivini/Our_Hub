@@ -2,6 +2,17 @@ class ReservationsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     @reservations = policy_scope(Reservation).where(visit: @visit)
+
+    @donations = @reservations.map do |reservation|
+      reservation.donation
+    end.uniq
+
+      @markers = @donations.map do |donation|
+      {
+        lat: donation.latitude,
+        lng: donation.longitude
+      }
+    end
   end
 
   def new
