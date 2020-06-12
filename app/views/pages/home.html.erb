@@ -31,11 +31,6 @@
     <div id="homepage-btn">
       <%= link_to "ADD DONATION", new_donation_path, class: "button-filled-add" %>
     </div>
-    <div id="homepage-btn">
-      <% if current_user %>
-        <%= link_to "MY DONATIONS", user_path(current_user), class: "button-filled-add" %>
-      <% end %>
-    </div>
     <div class="card-home">
       <h2>Among people.<br>Homeless people<br>and their stories</h2>
         <p>There are nearly 2000 people in Berlin currently without a home.

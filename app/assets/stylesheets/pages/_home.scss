@@ -1,6 +1,10 @@
 // Specific CSS for your home-page
-body { font-family: 'Roboto', sans-serif;
-     background-color: #F4F4F4;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F4F4F4;
+    a {
+      text-decoration: none !important;
+    }
 
 }
 
