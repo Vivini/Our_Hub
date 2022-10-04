@@ -134,7 +134,7 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    pdfkit (0.8.4.2)
+    pdfkit (0.8.7)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
